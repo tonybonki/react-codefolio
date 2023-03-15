@@ -1,4 +1,15 @@
-#desktop-nav-link{
-    padding-bottom: -100px !important;
-    background-color: red !important;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Comfortaa', cursive !important;
+    letter-spacing: -.3px !important;
+}
+
+.nav-link:hover{
+    color: #2e8a93 !important;
+}
+
+.nav-link{
+    font-weight: 800 !important;
+    color: #61a0a6c6 !important;
+    text-decoration: none !important;
 }
