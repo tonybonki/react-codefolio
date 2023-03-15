@@ -12,12 +12,30 @@ import {
   useColorModeValue,
   useDisclosure,
   Image,
+  ButtonGroup,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
+  ChevronLeftIcon,
 } from '@chakra-ui/icons';
+
+// Custom Icons
+function GithubIcon() {
+  return (
+    <>
+      <Link href="https://github.com/tonybonki">
+        <Image
+          title="Go to my Github"
+          alt="Github Icon"
+          src="./github.png"
+          boxSize={5}
+        />
+      </Link>
+    </>
+  );
+}
 
 // Export Component
 export default function Navbar() {
@@ -62,7 +80,7 @@ export default function Navbar() {
           direction={'row'}
           spacing={6}
         >
-          <Button
+          {/* <Button
             as={'a'}
             fontSize={'sm'}
             fontWeight={400}
@@ -70,11 +88,34 @@ export default function Navbar() {
             href={'#'}
           >
             Sign In
-          </Button>
+          </Button> */}
+
+          {/* Add Component Here */}
+
+          <ButtonGroup
+            display={{ base: 'none', md: 'inline-flex' }}
+            isAttached
+            size="sm"
+            variant="outline"
+          >
+            <Button fontWeight={800}>Projects</Button>
+            <Link href="https://github.com/tonybonki">
+            </Link>
+            <IconButton
+              backgroundColor="blue.400"
+              color="white"
+              _hover={{
+                bg: 'blue.300',
+              }}
+              icon={<GithubIcon />}
+            />
+          </ButtonGroup>
+
           <Button
             as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
+            size="sm"
             fontWeight={700}
             color={'white'}
             bg={'teal.400'}
@@ -96,24 +137,22 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map(navItem => (
         <Box key={navItem.label}>
-              <Link
-                href={navItem.href ?? '#'}
-                className="nav-link"
-                fontSize={'14px'}
-              >
-                {navItem.label}
-              </Link>  
+          <Link
+            href={navItem.href ?? '#'}
+            className="nav-link"
+            fontSize={'14px'}
+          >
+            {navItem.label}
+          </Link>
         </Box>
       ))}
     </Stack>
   );
 };
-
 
 const MobileNav = () => {
   return (
