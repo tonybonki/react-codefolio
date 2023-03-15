@@ -57,8 +57,8 @@ export default function Navbar() {
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Image
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            w={20}
-            src="./logo.png"
+            h={10}
+            src="./logo3.png"
             alt="Dan Abramov"
           />
 
@@ -119,7 +119,6 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 href={navItem.href ?? '#'}
-                fontSize={'12px'}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
