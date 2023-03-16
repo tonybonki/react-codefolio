@@ -13,13 +13,10 @@ import {
   useDisclosure,
   Image,
   ButtonGroup,
+  Kbd,
 } from '@chakra-ui/react';
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronLeftIcon,
-} from '@chakra-ui/icons';
+// Import Icons
+import { HamburgerIcon, CloseIcon, ChevronDownIcon } from '@chakra-ui/icons';
 
 // Custom Icons
 function GithubIcon() {
@@ -34,6 +31,14 @@ function GithubIcon() {
         />
       </Link>
     </>
+  );
+}
+
+function KbdIcon(props) {
+  return (
+    <Box display={'flex'} alignItems={'center'}>
+      <Kbd>{props.fKey}</Kbd> + <Kbd>{props.sKey}</Kbd>
+    </Box>
   );
 }
 
@@ -80,16 +85,6 @@ export default function Navbar() {
           direction={'row'}
           spacing={6}
         >
-          {/* <Button
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}
-          >
-            Sign In
-          </Button> */}
-
           {/* Add Component Here */}
 
           <ButtonGroup
@@ -99,32 +94,39 @@ export default function Navbar() {
             variant="outline"
           >
             <Button fontWeight={800}>Projects</Button>
-            <Link href="https://github.com/tonybonki"></Link>
             <IconButton
-              backgroundColor="blue.400"
+              backgroundColor="teal.400"
               color="white"
               _hover={{
-                bg: 'blue.300',
+                bg: 'teal.300',
               }}
               icon={<GithubIcon />}
             />
           </ButtonGroup>
 
-          <Button
-            as={'a'}
+          <ButtonGroup
             display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
+            isAttached
+            variant={'outline'}
             size="xs"
-            fontWeight={700}
-            color={'white'}
-            bg={'teal.400'}
-            href={'#'}
-            _hover={{
-              bg: 'teal.300',
-            }}
           >
-            Sign Up
-          </Button>
+            <IconButton
+              backgroundColor="teal.400"
+              color="white"
+              _hover={{
+                bg: 'teal.300',
+              }}
+              icon={<HamburgerIcon />}
+            />
+            <IconButton
+              bg={'white'}
+              _hover={{
+                bg: 'white',
+              }}
+              p={1}
+              icon={<KbdIcon fKey='Ctrl' sKey='N'/>}
+            />
+          </ButtonGroup>
         </Stack>
       </Flex>
 
