@@ -85,7 +85,7 @@ export default function Navbar() {
           direction={'row'}
           spacing={6}
         >
-          {/* Add Component Here */}
+          {/* Projects Button Group */}
 
           <ButtonGroup
             display={{ base: 'none', md: 'inline-flex' }}
@@ -104,6 +104,7 @@ export default function Navbar() {
             />
           </ButtonGroup>
 
+          {/* Drawer Button Group */}
           <ButtonGroup
             display={{ base: 'none', md: 'inline-flex' }}
             isAttached
