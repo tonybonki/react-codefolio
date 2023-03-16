@@ -30,7 +30,7 @@ function GithubIcon() {
           title="Go to my Github"
           alt="Github Icon"
           src="./github.png"
-          boxSize={5}
+          boxSize={4}
         />
       </Link>
     </>
@@ -95,12 +95,11 @@ export default function Navbar() {
           <ButtonGroup
             display={{ base: 'none', md: 'inline-flex' }}
             isAttached
-            size="sm"
+            size="xs"
             variant="outline"
           >
             <Button fontWeight={800}>Projects</Button>
-            <Link href="https://github.com/tonybonki">
-            </Link>
+            <Link href="https://github.com/tonybonki"></Link>
             <IconButton
               backgroundColor="blue.400"
               color="white"
@@ -115,7 +114,7 @@ export default function Navbar() {
             as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
             fontSize={'sm'}
-            size="sm"
+            size="xs"
             fontWeight={700}
             color={'white'}
             bg={'teal.400'}
