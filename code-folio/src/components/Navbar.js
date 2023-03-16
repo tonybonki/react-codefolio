@@ -14,6 +14,7 @@ import {
   Image,
   ButtonGroup,
   Kbd,
+  HStack,
 } from '@chakra-ui/react';
 // Import Icons
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from '@chakra-ui/icons';
@@ -25,23 +26,47 @@ import { kbdTheme } from './Theme';
 // Custom Icons
 function GithubIcon() {
   return (
-    <>
-      <Link href="https://github.com/tonybonki">
-        <Image
-          title="Go to my Github"
-          alt="Github Icon"
-          src="./github.png"
-          boxSize={4}
-        />
-      </Link>
-    </>
+    <Link href='github' isExternal>
+      <Image
+        title="Go to my Github"
+        alt="Github Icon"
+        src="./github.png"
+        h={5}
+        w={5}
+        maxWidth={'none'}
+        opacity={'50%'}
+        _hover={{
+          opacity: 100,
+        }}
+      />
+    </Link>
   );
 }
 
 function KbdIcon(props) {
   return (
     <Box display={'flex'} alignItems={'center'}>
-      <Kbd theme={kbdTheme}>{props.fKey}</Kbd> + <Kbd>{props.sKey}</Kbd>
+      <Kbd
+        color={'white'}
+        bg={'teal.200'}
+        borderColor={'teal.300'}
+        p={0.5}
+        w={7}
+        borderRadius={1}
+        marginRight={0.5}
+      >
+        {props.fKey}
+      </Kbd>
+      <Kbd
+        color={'white'}
+        bg={'teal.200'}
+        borderColor={'teal.300'}
+        borderRadius={1}
+        p={0.5}
+        w={4}
+      >
+        {props.sKey}
+      </Kbd>
     </Box>
   );
 }
@@ -89,49 +114,13 @@ export default function Navbar() {
           direction={'row'}
           spacing={6}
         >
-          {/* Projects Button Group */}
-
-          <ButtonGroup
-            display={{ base: 'none', md: 'inline-flex' }}
-            isAttached
-            size="xs"
-            variant="outline"
-          >
-            <Button fontWeight={800}>Projects</Button>
-            <IconButton
-              backgroundColor="teal.400"
-              color="white"
-              _hover={{
-                bg: 'teal.300',
-              }}
-              icon={<GithubIcon />}
-            />
-          </ButtonGroup>
-
-          {/* Drawer Button Group */}
-          <ButtonGroup
-            display={{ base: 'none', md: 'inline-flex' }}
-            isAttached
-            variant={'outline'}
-            size="xs"
-          >
-            <IconButton
-              backgroundColor="teal.400"
-              color="white"
-              _hover={{
-                bg: 'teal.300',
-              }}
-              icon={<HamburgerIcon />}
-            />
-            <IconButton
-              bg={'white'}
-              _hover={{
-                bg: 'white',
-              }}
-              p={1}
-              icon={<KbdIcon fKey='Ctrl' sKey='N'/>}
-            />
-          </ButtonGroup>
+          {/* Social Media Link Icons */}
+          <HStack>
+            <GithubIcon />
+            <GithubIcon />
+            <GithubIcon />
+            <GithubIcon />
+          </HStack>
         </Stack>
       </Flex>
 
