@@ -18,6 +18,10 @@ import {
 // Import Icons
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from '@chakra-ui/icons';
 
+// Import Custom Theme
+
+import { kbdTheme } from './Theme';
+
 // Custom Icons
 function GithubIcon() {
   return (
@@ -37,7 +41,7 @@ function GithubIcon() {
 function KbdIcon(props) {
   return (
     <Box display={'flex'} alignItems={'center'}>
-      <Kbd>{props.fKey}</Kbd> + <Kbd>{props.sKey}</Kbd>
+      <Kbd theme={kbdTheme}>{props.fKey}</Kbd> + <Kbd>{props.sKey}</Kbd>
     </Box>
   );
 }
