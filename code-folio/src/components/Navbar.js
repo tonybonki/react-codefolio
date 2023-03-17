@@ -1,4 +1,3 @@
-// Import Chakra UI components
 import {
   Box,
   Flex,
@@ -7,73 +6,48 @@ import {
   Button,
   Stack,
   Collapse,
+  Image,
   Icon,
   Link,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
   useColorModeValue,
+  useBreakpointValue,
   useDisclosure,
-  Image,
-  ButtonGroup,
-  Kbd,
-  HStack,
+  useMediaQuery,
 } from '@chakra-ui/react';
-// Import Icons
-import { HamburgerIcon, CloseIcon, ChevronDownIcon } from '@chakra-ui/icons';
+import {
+  HamburgerIcon,
+  CloseIcon,
+  ChevronDownIcon,
+  ChevronRightIcon,
+} from '@chakra-ui/icons';
 
-// Import Custom Theme
 
-import { kbdTheme } from './Theme';
+// Import external Icons
 
-// Custom Icons
-function GithubIcon() {
+import { FiGithub } from 'react-icons/fi';
+
+function GitHubIcon() {
   return (
-    <Link href='github' isExternal>
-      <Image
-        title="Go to my Github"
-        alt="Github Icon"
-        src="./github.png"
-        h={5}
-        w={5}
-        maxWidth={'none'}
+    <div>
+      <Link
         opacity={'50%'}
-        _hover={{
-          opacity: 100,
-        }}
-      />
-    </Link>
+        _hover={{ opacity: '100' }}
+        isExternal
+        href="www.google.com"
+      >
+        <FiGithub color="teal" />
+      </Link>
+    </div>
   );
 }
 
-function KbdIcon(props) {
-  return (
-    <Box display={'flex'} alignItems={'center'}>
-      <Kbd
-        color={'white'}
-        bg={'teal.200'}
-        borderColor={'teal.300'}
-        p={0.5}
-        w={7}
-        borderRadius={1}
-        marginRight={0.5}
-      >
-        {props.fKey}
-      </Kbd>
-      <Kbd
-        color={'white'}
-        bg={'teal.200'}
-        borderColor={'teal.300'}
-        borderRadius={1}
-        p={0.5}
-        w={4}
-      >
-        {props.sKey}
-      </Kbd>
-    </Box>
-  );
-}
 
-// Export Component
-export default function Navbar() {
+export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const [isLargerThanMobile] = useMediaQuery('(min-width: 480px)');
 
   return (
     <Box>
@@ -83,7 +57,9 @@ export default function Navbar() {
         minH={'60px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        boxShadow="base"
+        borderBottom={1}
+        borderStyle={'solid'}
+        borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}
       >
         <Flex
@@ -100,10 +76,15 @@ export default function Navbar() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ md: 'start' }}>
-          <Image h={10} src="./logo3.png" alt="bonki logo" />
-          {/* Navbar Container */}
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10} mt={'7px'}>
+        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+          <Image
+            h={5}
+            src='./logo.png'
+          >
+           
+          </Image>
+
+          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -112,15 +93,17 @@ export default function Navbar() {
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
-          spacing={6}
+          spacing={2}
         >
-          {/* Social Media Link Icons */}
-          <HStack>
-            <GithubIcon />
-            <GithubIcon />
-            <GithubIcon />
-            <GithubIcon />
-          </HStack>
+          {/* Social Media Icons */}
+
+          {isLargerThanMobile && (
+            <>
+              <GitHubIcon />
+              <GitHubIcon />
+              <GitHubIcon />
+            </>
+          )}
         </Stack>
       </Flex>
 
@@ -132,20 +115,83 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
+  const linkColor = useColorModeValue('gray.600', 'gray.200');
+  const linkHoverColor = useColorModeValue('gray.800', 'white');
+  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+
   return (
     <Stack direction={'row'} spacing={4}>
-      {NAV_ITEMS.map(navItem => (
+      {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Link
-            href={navItem.href ?? '#'}
-            className="nav-link"
-            fontSize={'14px'}
-          >
-            {navItem.label}
-          </Link>
+          <Popover trigger={'hover'} placement={'bottom-start'}>
+            <PopoverTrigger>
+              <Link
+                p={2}
+                href={navItem.href ?? '#'}
+                fontSize={'sm'}
+                fontWeight={500}
+                color={linkColor}
+                _hover={{
+                  textDecoration: 'none',
+                  color: linkHoverColor,
+                }}>
+                {navItem.label}
+              </Link>
+            </PopoverTrigger>
+
+            {navItem.children && (
+              <PopoverContent
+                border={0}
+                boxShadow={'xl'}
+                bg={popoverContentBgColor}
+                p={4}
+                rounded={'xl'}
+                minW={'sm'}>
+                <Stack>
+                  {navItem.children.map((child) => (
+                    <DesktopSubNav key={child.label} {...child} />
+                  ))}
+                </Stack>
+              </PopoverContent>
+            )}
+          </Popover>
         </Box>
       ))}
     </Stack>
+  );
+};
+
+const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+  return (
+    <Link
+      href={href}
+      role={'group'}
+      display={'block'}
+      p={2}
+      rounded={'md'}
+      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+      <Stack direction={'row'} align={'center'}>
+        <Box>
+          <Text
+            transition={'all .3s ease'}
+            _groupHover={{ color: 'pink.400' }}
+            fontWeight={500}>
+            {label}
+          </Text>
+          <Text fontSize={'sm'}>{subLabel}</Text>
+        </Box>
+        <Flex
+          transition={'all .3s ease'}
+          transform={'translateX(-10px)'}
+          opacity={0}
+          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+          justify={'flex-end'}
+          align={'center'}
+          flex={1}>
+          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+        </Flex>
+      </Stack>
+    </Link>
   );
 };
 
@@ -154,9 +200,8 @@ const MobileNav = () => {
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
-      display={{ md: 'none' }}
-    >
-      {NAV_ITEMS.map(navItem => (
+      display={{ md: 'none' }}>
+      {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
     </Stack>
@@ -176,12 +221,10 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         align={'center'}
         _hover={{
           textDecoration: 'none',
-        }}
-      >
+        }}>
         <Text
           fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}
-        >
+          color={useColorModeValue('gray.600', 'gray.200')}>
           {label}
         </Text>
         {children && (
@@ -202,10 +245,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           borderLeft={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.700')}
-          align={'start'}
-        >
+          align={'start'}>
           {children &&
-            children.map(child => (
+            children.map((child) => (
               <Link key={child.label} py={2} href={child.href}>
                 {child.label}
               </Link>
@@ -223,7 +265,6 @@ interface NavItem {
   href?: string;
 }
 
-//Array of Navbar Items
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Inspiration',
