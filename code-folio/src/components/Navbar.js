@@ -125,11 +125,11 @@ const DesktopNav = () => {
             {navItem.children && (
               <PopoverContent
                 border={0}
-                boxShadow={'xl'}
+                boxShadow={'base'}
                 bg={popoverContentBgColor}
-                p={4}
+                p={3}
                 rounded={'xl'}
-                minW={'sm'}
+                minW={'xs'}
               >
                 <Stack>
                   {navItem.children.map(child => (
@@ -151,8 +151,8 @@ const DesktopSubNav = ({ label, href, subLabel, icon }: NavItem) => {
       href={href}
       role={'group'}
       display={'block'}
-      p={2}
-      rounded={'md'}
+      p={1}
+      rounded={'base'}
       _hover={{ bg: useColorModeValue('teal.50', 'gray.900') }}
     >
       <Stack direction={'row'} align={'center'}>
@@ -163,6 +163,7 @@ const DesktopSubNav = ({ label, href, subLabel, icon }: NavItem) => {
               transition={'all .3s ease'}
               _groupHover={{ color: 'teal.400' }}
               fontWeight={500}
+              fontSize={14}
             >
               {label}
             </Text>
@@ -267,12 +268,10 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         icon: <AiOutlineFundProjectionScreen  size={17} />,
         label: 'Projects',
-        subLabel: 'Check out the apps I have created',
         href: '#',
       },
       {
         label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
         href: '#',
       },
     ],
