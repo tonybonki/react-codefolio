@@ -3,7 +3,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Image,
@@ -13,7 +12,6 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   useMediaQuery,
 } from '@chakra-ui/react';
@@ -26,13 +24,12 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons';
 
-// Import React Icons
 
-import { AiOutlineFundProjectionScreen } from 'react-icons/ai'
 
 // Import Components
 
-import ColorModeToggle from './Colortoggle';
+import ColorModeToggle from '../Colortoggle';
+import { NAV_ITEMS } from './Navlinks';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -110,7 +107,7 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
+                fontSize={'14'}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -163,13 +160,13 @@ const DesktopSubNav = ({ label, href, subLabel, icon }: NavItem) => {
               transition={'all .3s ease'}
               _groupHover={{ color: 'teal.400' }}
               fontWeight={500}
-              fontSize={14}
+              fontSize={13}
             >
               {label}
             </Text>
           </Stack>
 
-          <Text fontSize={'sm'}>{subLabel}</Text>
+          <Text fontSize={11}>{subLabel}</Text>
         </Box>
         <Flex
           transition={'all .3s ease'}
@@ -180,7 +177,7 @@ const DesktopSubNav = ({ label, href, subLabel, icon }: NavItem) => {
           align={'center'}
           flex={1}
         >
-          <Icon color={'teal.400'} w={7} h={7} as={ChevronRightIcon} />
+          <Icon color={'teal.400'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -254,49 +251,4 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   );
 };
 
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
 
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'My Skills',
-    children: [
-      {
-        icon: <AiOutlineFundProjectionScreen  size={17} />,
-        label: 'Projects',
-        href: '#',
-      },
-      {
-        label: 'New & Noteworthy',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Find Work',
-    children: [
-      {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
-      },
-      {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Contact Me',
-    href: '#',
-  },
-  {
-    label: 'About Me',
-    href: '#',
-  },
-];
