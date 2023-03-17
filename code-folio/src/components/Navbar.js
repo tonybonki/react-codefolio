@@ -26,6 +26,10 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons';
 
+// Import React Icons
+
+import { AiOutlineFundProjectionScreen } from 'react-icons/ai'
+
 // Import Components
 
 import ColorModeToggle from './Colortoggle';
@@ -141,7 +145,7 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({ label, href, subLabel, icon }: NavItem) => {
   return (
     <Link
       href={href}
@@ -149,17 +153,21 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      _hover={{ bg: useColorModeValue('teal.50', 'gray.900') }}
     >
       <Stack direction={'row'} align={'center'}>
         <Box>
-          <Text
-            transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
+          <Stack direction={'row'} align={'center'}>
+            {icon}
+            <Text
+              transition={'all .3s ease'}
+              _groupHover={{ color: 'teal.400' }}
+              fontWeight={500}
+            >
+              {label}
+            </Text>
+          </Stack>
+
           <Text fontSize={'sm'}>{subLabel}</Text>
         </Box>
         <Flex
@@ -171,7 +179,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={'center'}
           flex={1}
         >
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={'teal.400'} w={7} h={7} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -254,11 +262,12 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
+    label: 'My Skills',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
+        icon: <AiOutlineFundProjectionScreen  size={17} />,
+        label: 'Projects',
+        subLabel: 'Check out the apps I have created',
         href: '#',
       },
       {
@@ -284,11 +293,11 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: 'Learn Design',
+    label: 'Contact Me',
     href: '#',
   },
   {
-    label: 'Hire Designers',
+    label: 'About Me',
     href: '#',
   },
 ];
