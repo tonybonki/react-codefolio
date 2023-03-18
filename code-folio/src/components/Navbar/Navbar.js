@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   useDisclosure,
   useMediaQuery,
+  Kbd,
 } from '@chakra-ui/react';
 
 // Import Chakra Icons
@@ -63,8 +64,8 @@ export default function WithSubnavigation() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+          {/* Navbar Logo */}
           <Image h={5} src="./logo.png"></Image>
-
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -74,13 +75,17 @@ export default function WithSubnavigation() {
           flex={{ base: 1, md: 0 }}
           justify={'flex-end'}
           direction={'row'}
+          alignItems={'center'}
           spacing={4}
         >
-          {/* Social Media Icons */}
-
+          {/* Color Mode Toggle */}
+          {/* Hide Content in Mobile View */}
           {isLargerThanMobile && (
             <>
               <ColorModeToggle />
+              <Stack display={'flex'} spacing={1} direction={'row'}>
+                <Kbd borderRadius={2}>shift</Kbd> <Kbd borderRadius={2}>H</Kbd>
+              </Stack>
             </>
           )}
         </Stack>
