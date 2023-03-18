@@ -7,16 +7,12 @@ import {
   AiOutlineCoffee,
   AiOutlineProject,
   AiOutlineCloud,
+  AiOutlineHeart,
+  AiOutlineLinkedin,
 } from 'react-icons/ai';
 
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-
-export const NAV_ITEMS: Array<NavItem> = [
+// Nav Items Array
+export const NAV_ITEMS = [
   {
     label: 'My Skills',
     children: [
@@ -29,39 +25,37 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         icon: <AiOutlineCode size={17} />,
         label: 'Language repertoire.',
-        subLabel: "Programming Languages I'm familiar with.",
+        subLabel: "Programming languages I'm familiar with.",
         href: '#',
       },
     ],
   },
   {
-    label: 'Find Work',
+    label: 'Work Experience',
     children: [
       {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
+        icon: <AiOutlineWallet />,
+        label: 'Past Jobs',
+        subLabel: 'Places I have worked in.',
         href: '#',
       },
       {
-        label: 'Freelance Projects',
+        icon: <AiOutlineHeart />,
+        label: 'Testimonials',
         subLabel: 'An exclusive list for contract work',
         href: '#',
       },
+      {
+        icon: <AiOutlineLinkedin />,
+        label: 'My Resume',
+        subLabel: ' My curriculum vitae',
+        href: '#',
+      },
     ],
-  },
-  {
-    label: 'Contact Me',
-    href: '#',
   },
   {
     label: 'About Me',
     children: [
-      {
-        icon: <AiOutlineWallet />,
-        label: 'Work Experience',
-        subLabel: "Places I've worked.",
-        href: '#',
-      },
       {
         icon: <AiOutlineProject />,
         label: 'My Education',
@@ -81,5 +75,9 @@ export const NAV_ITEMS: Array<NavItem> = [
         href: '#',
       },
     ],
+  },
+  {
+    label: 'Contact Me',
+    href: '#',
   },
 ];
