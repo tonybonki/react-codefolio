@@ -1,6 +1,16 @@
 import { Button, ButtonProps, Flex, useColorMode } from '@chakra-ui/react';
 import { BsSun, BsMoon } from 'react-icons/bs';
 
+document.addEventListener('keydown', event => {
+  // Check if the key combination is CTRL + SHIFT + C
+  if (event.ctrlKey && event.shiftKey && event.code === 'KeyC') {
+    console.log('Hello')
+    document.body.classList.toggle('dark-mode');
+  }
+});
+
+
+
 export default function ColorModeToggle(props: ButtonProps) {
   const { colorMode, toggleColorMode } = useColorMode();
   return (

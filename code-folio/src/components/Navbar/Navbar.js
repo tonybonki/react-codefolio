@@ -83,9 +83,6 @@ export default function WithSubnavigation() {
           {isLargerThanMobile && (
             <>
               <ColorModeToggle />
-              <Stack display={'flex'} spacing={1} direction={'row'}>
-                <Kbd borderRadius={2}>shift</Kbd> <Kbd borderRadius={2}>H</Kbd>
-              </Stack>
             </>
           )}
         </Stack>
