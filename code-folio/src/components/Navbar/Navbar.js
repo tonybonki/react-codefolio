@@ -110,6 +110,7 @@ const DesktopNav = () => {
                 p={2}
                 href={navItem.href ?? '#'}
                 fontSize={'14'}
+                className='nav-link'
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
