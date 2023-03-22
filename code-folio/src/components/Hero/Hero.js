@@ -59,10 +59,10 @@ export default function MainHero() {
           w={'full'}
         >
           <Blob
-            w={'150%'}
-            h={'150%'}
+            w={'100%'}
+            h={'100%'}
             position={'absolute'}
-            top={'-20%'}
+            
             left={0}
             zIndex={-1}
             color={useColorModeValue('teal.50', 'teal.400')}
