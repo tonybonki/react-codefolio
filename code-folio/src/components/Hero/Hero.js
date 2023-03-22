@@ -13,37 +13,56 @@ import {
   IconProps,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { transform } from 'framer-motion';
+
+import {
+  AiOutlineFundProjectionScreen,
+  AiOutlineWallet,
+} from 'react-icons/ai';
 
 export default function MainHero() {
   return (
     <Container maxW={'7xl'}>
       <Stack direction={{ base: 'column', md: 'row' }}>
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+        <Stack flex={1} spacing={{ base: 5, md: 1 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            color={'gray.600'}
+            color={useColorModeValue('gray.600', 'white')}
             fontSize={{ base: '2xl', sm: '3xl', lg: '4xl' }}
           >
             <Text as={'span'} position={'relative'}>
               Welcome to my
             </Text>
             <br />
-            <Text as={'span'} color={'teal.400'}>
+            <Text as={'span'} color={useColorModeValue('teal.400', 'teal.300')}>
               Codefolio!
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
-            Hi, my name is Tony Bonki. I am a student of the University of DCU in
-            Ireland studying Computing for Business. I created this website to
-            showcase the projects I have done and show off all of my skills.
+          <Text
+            color={useColorModeValue('gray.600', 'white')}
+            fontSize={{ base: '17px', sm: '17px', lg: '17px' }}
+          >
+            Hi, my name is Tony Bonki. I am a student of the University of DCU
+            in Ireland studying Computing for Business. I created this website
+            to showcase the projects I have done and show off all of my skills.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}
           >
             {/* Add Component or Button Here*/}
+            <Button
+              rightIcon={<AiOutlineFundProjectionScreen />}
+              colorScheme="teal"
+              variant="solid"
+              fontWeight={500}
+              size="sm"
+            >
+              My Projects
+            </Button>
             {/* Add Component or button Here*/}
+
           </Stack>
         </Stack>
         <Flex
