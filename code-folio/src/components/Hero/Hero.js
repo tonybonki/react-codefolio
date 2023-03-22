@@ -17,9 +17,7 @@ import {
 export default function MainHero() {
   return (
     <Container maxW={'7xl'}>
-      <Stack
-        direction={{ base: 'column', md: 'row' }}
-      >
+      <Stack direction={{ base: 'column', md: 'row' }}>
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
           <Heading
             lineHeight={1.1}
@@ -27,10 +25,7 @@ export default function MainHero() {
             color={'gray.600'}
             fontSize={{ base: '2xl', sm: '3xl', lg: '4xl' }}
           >
-            <Text
-              as={'span'}
-              position={'relative'}
-            >
+            <Text as={'span'} position={'relative'}>
               Welcome to my
             </Text>
             <br />
@@ -39,9 +34,9 @@ export default function MainHero() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            Snippy is a rich coding snippets app that lets you create your own
-            code snippets, categorize them, and even sync them in the cloud so
-            you can use them anywhere. All that is free!
+            Hi, my name is Tony Bonki. I am a student of the University of DCU in
+            Ireland studying Computing for Business. I created this website to
+            showcase the projects I have done and show off all of my skills.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
@@ -62,25 +57,21 @@ export default function MainHero() {
             w={'100%'}
             h={'100%'}
             position={'absolute'}
-            
             left={0}
             zIndex={-1}
             color={useColorModeValue('teal.50', 'teal.400')}
           />
-          <Box
-            position={'relative'}
-            width={'full'}
-            overflow={'hidden'}
-          >
+          <Box position={'relative'} width={'full'} overflow={'hidden'}>
             <Image
               alt={'Hero Image'}
               fit={'cover'}
+              marginLeft={'auto'}
+              marginRight={'auto'}
               align={'center'}
               w={'70%'}
               h={'70%'}
-              src={
-                './selfie.jpg'
-              }
+              borderRadius={'10px'}
+              src={'./code-selfie3.png'}
             />
           </Box>
         </Flex>
