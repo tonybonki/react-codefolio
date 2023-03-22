@@ -79,7 +79,7 @@ export default function MainHero() {
               w={'70%'}
               h={'70%'}
               src={
-                './code-selfie.png'
+                './selfie.jpg'
               }
             />
           </Box>
