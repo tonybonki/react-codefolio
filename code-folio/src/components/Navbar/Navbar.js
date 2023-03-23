@@ -25,8 +25,6 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons';
 
-
-
 // Import Components
 
 import ColorModeToggle from '../Colortoggle';
@@ -78,13 +76,7 @@ export default function WithSubnavigation() {
           alignItems={'center'}
           spacing={4}
         >
-          {/* Color Mode Toggle */}
-          {/* Hide Content in Mobile View */}
-          {isLargerThanMobile && (
-            <>
-              <ColorModeToggle />
-            </>
-          )}
+          <ColorModeToggle />
         </Stack>
       </Flex>
 
@@ -110,7 +102,7 @@ const DesktopNav = () => {
                 p={2}
                 href={navItem.href ?? '#'}
                 fontSize={'14'}
-                className='nav-link'
+                className="nav-link"
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -253,5 +245,3 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     </Stack>
   );
 };
-
-

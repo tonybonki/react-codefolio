@@ -17,8 +17,9 @@ import {
 } from '@chakra-ui/react';
 import { transform } from 'framer-motion';
 
-
 export default function MainHero() {
+  const [isLargerThanMobile] = useMediaQuery('(min-width: 680px)');
+
   return (
     <Container maxW={'7xl'}>
       <Stack direction={{ base: 'column', md: 'row' }}>
@@ -50,12 +51,19 @@ export default function MainHero() {
             direction={{ base: 'column', sm: 'row' }}
           >
             {/* Add Component or button Here*/}
-            <Image
-              alt={'Best Dev Snippet'}
-              w={'50%'}
-              id="hero-code-snippet"
-              src={'./best-dev.png'}
-            />
+            {isLargerThanMobile && (
+              <>
+                <Link href="Add Skills href here">
+                  <Image
+                    alt={'Best Dev Snippet'}
+                    w={'50%'}
+                    titles={'Best Dev Snippet'}
+                    id="hero-code-snippet"
+                    src={'./best-dev.png'}
+                  />
+                </Link>
+              </>
+            )}
           </Stack>
         </Stack>
         <Flex
@@ -74,27 +82,22 @@ export default function MainHero() {
             color={useColorModeValue('teal.50', 'teal.400')}
           />
           <Box position={'relative'} width={'full'} overflow={'hidden'}>
-            <Link href="Add Skills href here">
-              <Image
-                alt={'Hero Image'}
-                fit={'cover'}
-                marginLeft={'auto'}
-                marginRight={'auto'}
-                align={'center'}
-                w={'70%'}
-                h={'70%'}
-                borderRadius={'10px'}
-                src={'./code-selfie3.png'}
-              />
-            </Link>
+            <Image
+              alt={'Hero Image'}
+              fit={'cover'}
+              marginLeft={'auto'}
+              marginRight={'auto'}
+              align={'center'}
+              w={'70%'}
+              borderRadius={'10px'}
+              src={'./code-selfie3.png'}
+            />
           </Box>
         </Flex>
       </Stack>
     </Container>
   );
 }
-
-
 
 export const Blob = (props: IconProps) => {
   return (
