@@ -12,13 +12,11 @@ import {
   createIcon,
   IconProps,
   useColorModeValue,
+  useMediaQuery,
+  Link,
 } from '@chakra-ui/react';
 import { transform } from 'framer-motion';
 
-import {
-  AiOutlineFundProjectionScreen,
-  AiOutlineWallet,
-} from 'react-icons/ai';
 
 export default function MainHero() {
   return (
@@ -51,18 +49,13 @@ export default function MainHero() {
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}
           >
-            {/* Add Component or Button Here*/}
-            <Button
-              rightIcon={<AiOutlineFundProjectionScreen />}
-              colorScheme="teal"
-              variant="solid"
-              fontWeight={500}
-              size="sm"
-            >
-              My Projects
-            </Button>
             {/* Add Component or button Here*/}
-
+            <Image
+              alt={'Best Dev Snippet'}
+              w={'50%'}
+              id="hero-code-snippet"
+              src={'./best-dev.png'}
+            />
           </Stack>
         </Stack>
         <Flex
@@ -81,17 +74,19 @@ export default function MainHero() {
             color={useColorModeValue('teal.50', 'teal.400')}
           />
           <Box position={'relative'} width={'full'} overflow={'hidden'}>
-            <Image
-              alt={'Hero Image'}
-              fit={'cover'}
-              marginLeft={'auto'}
-              marginRight={'auto'}
-              align={'center'}
-              w={'70%'}
-              h={'70%'}
-              borderRadius={'10px'}
-              src={'./code-selfie3.png'}
-            />
+            <Link href="Add Skills href here">
+              <Image
+                alt={'Hero Image'}
+                fit={'cover'}
+                marginLeft={'auto'}
+                marginRight={'auto'}
+                align={'center'}
+                w={'70%'}
+                h={'70%'}
+                borderRadius={'10px'}
+                src={'./code-selfie3.png'}
+              />
+            </Link>
           </Box>
         </Flex>
       </Stack>
