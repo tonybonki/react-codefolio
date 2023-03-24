@@ -2,6 +2,7 @@ import {
   Container,
   Stack,
   Flex,
+  Tooltip,
   Box,
   Heading,
   Text,
@@ -34,7 +35,7 @@ export default function MainHero() {
               Welcome to my
             </Text>
             <br />
-            <Text as={'span'} color={useColorModeValue('teal.400', 'teal.300')}>
+            <Text as={'span'} color={useColorModeValue('blue.500', 'teal.300')}>
               Codefolio!
             </Text>
           </Heading>
@@ -53,15 +54,19 @@ export default function MainHero() {
             {/* Add Component or button Here*/}
             {isLargerThanMobile && (
               <>
-                <Link href="Add Skills href here">
-                  <Image
-                    alt={'Best Dev Snippet'}
-                    w={'50%'}
-                    titles={'Best Dev Snippet'}
-                    id="hero-code-snippet"
-                    src={'./best-dev.png'}
-                  />
-                </Link>
+                <Tooltip
+                  bg="blue.600"
+                  label="View my Projects"
+                  aria-label="A tooltip"
+                >
+                  <Link w={'50%'} href="#projects">
+                    <Image
+                      alt={'Best Dev Snippet'}
+                      id="hero-code-snippet"
+                      src={'./best-dev.png'}
+                    />
+                  </Link>
+                </Tooltip>
               </>
             )}
           </Stack>
@@ -88,7 +93,7 @@ export default function MainHero() {
               marginLeft={'auto'}
               marginRight={'auto'}
               align={'center'}
-              w={'70%'}
+              w={'50%'}
               borderRadius={'10px'}
               src={'./code-selfie3.png'}
             />

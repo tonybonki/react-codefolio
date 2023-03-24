@@ -11,18 +11,18 @@ body, h1, h2, h3, h4, h5, h6{
     filter: drop-shadow(0px 0px 1px black);
 }
 
-#hero-code-snippet:hover{
+/* #hero-code-snippet:hover{
     transition-duration: .2s;
     cursor: pointer;
     transition-timing-function: ease-out;
     transform: scale(102%) !important;
-}
+} */
 
 #hero-code-snippet:active{
-    transition-duration: .1s;
+    transition-duration: .2s;
     opacity: 100%;
-    filter: drop-shadow(0px 0px 0px black);
-    transform: scale(100%) !important;
+    filter: drop-shadow(0px 0px 0px black) blur(.5px);
+    transform: scale(90%) !important;
 }
 
 .nav-link{
