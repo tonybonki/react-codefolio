@@ -79,7 +79,7 @@ export default function MainHero() {
               marginLeft={'auto'}
               marginRight={'auto'}
               align={'center'}
-              w={'50%'}
+              w={'60%'}
               borderRadius={'10px'}
               src={'./code-selfie3.png'}
             />
