@@ -16,32 +16,31 @@ import {
   useMediaQuery,
   Link,
 } from '@chakra-ui/react';
-import { transform } from 'framer-motion';
+
+import { FiGithub } from 'react-icons/fi';
 
 export default function MainHero() {
-  const [isLargerThanMobile] = useMediaQuery('(min-width: 680px)');
-
   return (
     <Container maxW={'7xl'}>
-      <Stack direction={{ base: 'column', md: 'row' }}>
-        <Stack flex={1} spacing={{ base: 5, md: 1 }}>
+      <Stack align={'center'} direction={{ base: 'column', md: 'row' }}>
+        <Stack flex={1} spacing={{ base: 5, md: 5 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
             color={useColorModeValue('gray.600', 'white')}
-            fontSize={{ base: '2xl', sm: '3xl', lg: '4xl' }}
+            fontSize={{ base: '2xl', sm: '3xl', lg: '6xl' }}
           >
             <Text as={'span'} position={'relative'}>
               Welcome to my
             </Text>
             <br />
-            <Text as={'span'} color={useColorModeValue('blue.500', 'teal.300')}>
+            <Text as={'span'} color={useColorModeValue('teal.500', 'teal.300')}>
               Codefolio!
             </Text>
           </Heading>
           <Text
             color={useColorModeValue('gray.600', 'white')}
-            fontSize={{ base: '17px', sm: '17px', lg: '17px' }}
+            fontSize={{ base: '17px', sm: '17px', lg: '19px' }}
           >
             Hi, my name is Tony Bonki. I am a student of the University of DCU
             in Ireland studying Computing for Business. I created this website
@@ -51,24 +50,11 @@ export default function MainHero() {
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}
           >
-            {/* Add Component or button Here*/}
-            {isLargerThanMobile && (
-              <>
-                <Tooltip
-                  bg="blue.600"
-                  label="View my Projects"
-                  aria-label="A tooltip"
-                >
-                  <Link w={'50%'} href="#projects">
-                    <Image
-                      alt={'Best Dev Snippet'}
-                      id="hero-code-snippet"
-                      src={'./best-dev.png'}
-                    />
-                  </Link>
-                </Tooltip>
-              </>
-            )}
+            {/* Add hero components here*/}
+
+            <Button size={'md'} leftIcon={<FiGithub />} colorScheme="teal">
+              Github
+            </Button>
           </Stack>
         </Stack>
         <Flex
@@ -79,14 +65,14 @@ export default function MainHero() {
           w={'full'}
         >
           <Blob
-            w={'100%'}
-            h={'100%'}
+            w={'90%'}
+            h={'90%'}
             position={'absolute'}
             left={0}
             zIndex={-1}
             color={useColorModeValue('teal.50', 'teal.400')}
           />
-          <Box position={'relative'} width={'full'} overflow={'hidden'}>
+          <Box position={'relative'} m={3} width={'full'} overflow={'hidden'}>
             <Image
               alt={'Hero Image'}
               fit={'cover'}
