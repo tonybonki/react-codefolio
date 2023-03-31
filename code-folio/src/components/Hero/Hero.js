@@ -51,10 +51,18 @@ export default function MainHero() {
             direction={{ base: 'column', sm: 'row' }}
           >
             {/* Add hero components here*/}
-
-            <Button size={'md'} leftIcon={<FiGithub />} colorScheme="teal">
-              Github
-            </Button>
+            <Link
+              _hover={{
+                textDecoration: 'none',
+              }}
+              isExternal
+              href="https://github.com/tonybonki"
+            >
+              {' '}
+              <Button size={'md'} leftIcon={<FiGithub />} colorScheme="teal">
+                Github
+              </Button>
+            </Link>
           </Stack>
         </Stack>
         <Flex

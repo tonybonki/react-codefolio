@@ -76,7 +76,20 @@ export default function WithSubnavigation() {
           alignItems={'center'}
           spacing={4}
         >
-          <ColorModeToggle />
+          <Flex alignItems={'center'}>
+            <ColorModeToggle />
+            {isLargerThanMobile && (
+              <>
+                <Text m={2} fontSize={12} fontWeight={800}>
+                  /
+                </Text>
+                <Stack display={'flex'} spacing={1} direction={'row'}>
+                  <Kbd borderRadius={2}>shift</Kbd>{' + '}
+                  <Kbd borderRadius={2}>N</Kbd>
+                </Stack>
+              </>
+            )}
+          </Flex>
         </Stack>
       </Flex>
 
