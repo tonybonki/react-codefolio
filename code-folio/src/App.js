@@ -1,7 +1,8 @@
 import React from 'react';
 // Import Components
 import MainHero from './components/Hero/Hero';
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar';
+import SplitWithImage from './components/Projects/Projects';
 
 import {
   ChakraProvider,
@@ -14,6 +15,7 @@ function App() {
     <ChakraProvider>
       <Navbar />
       <MainHero />
+      <SplitWithImage />
     </ChakraProvider>
   );
 }

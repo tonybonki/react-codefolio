@@ -80,6 +80,7 @@ export default function MainHero() {
             zIndex={-1}
             color={useColorModeValue('teal.50', 'teal.400')}
           />
+          {/* The Image of Myself */}
           <Box position={'relative'} m={3} width={'full'} overflow={'hidden'}>
             <Image
               alt={'Hero Image'}
@@ -98,6 +99,7 @@ export default function MainHero() {
   );
 }
 
+// The Blob image behind the photo of myself
 export const Blob = (props: IconProps) => {
   return (
     <Icon

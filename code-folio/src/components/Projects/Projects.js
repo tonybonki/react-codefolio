@@ -10,20 +10,8 @@ import {
   Icon,
   useColorModeValue,
 } from '@chakra-ui/react';
-import {
-  IoAnalyticsSharp,
-  IoLogoBitcoin,
-  IoSearchSharp,
-} from 'react-icons/io5';
-import { ReactElement } from 'react';
 
-interface FeatureProps {
-  text: string;
-  iconBg: string;
-  icon?: ReactElement;
-}
-
-const Feature = ({ text, icon, iconBg }: FeatureProps) => {
+const Skill = ({ text, icon, iconBg }: SkillProps) => {
   return (
     <Stack direction={'row'} align={'center'}>
       <Flex
@@ -43,25 +31,33 @@ const Feature = ({ text, icon, iconBg }: FeatureProps) => {
 
 export default function SplitWithImage() {
   return (
-    <Container maxW={'5xl'} py={12}>
+    <Container maxW={'4xl'} py={12}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Text
             textTransform={'uppercase'}
-            color={'blue.400'}
+            color={'teal.400'}
             fontWeight={600}
             fontSize={'sm'}
-            bg={useColorModeValue('blue.50', 'blue.900')}
+            bg={useColorModeValue('teal.50', 'teal.900')}
             p={2}
             alignSelf={'flex-start'}
             rounded={'md'}
           >
             Our Story
           </Text>
-          <Heading>A digital Product design agency</Heading>
-          <Text color={'gray.500'} fontSize={'lg'}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore
+
+          <Heading color={useColorModeValue('gray.600', 'white')} fontSize={30}>
+            Add Project Title here
+          </Heading>
+          <Text
+            color={useColorModeValue('gray.600', 'white')}
+            fontSize={{ base: '17px', sm: '17px', lg: '19px' }}
+          >
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
+            aliquam aut debitis laborum recusandae blanditiis nisi reiciendis
+            illum ut eveniet dolore ipsa sapiente ea maiores alias minima dicta,
+            libero rem.
           </Text>
           <Stack
             spacing={4}
@@ -71,35 +67,26 @@ export default function SplitWithImage() {
               />
             }
           >
-            <Feature
-              icon={
-                <Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />
+            <Skill
+              icon={<Icon as={'test'} color={'green.500'} w={5} h={5} />}
+              text={
+                <Text
+                  fontWeight={500}
+                  color={useColorModeValue('gray.600', 'white')}
+                >
+                  Add Skill Name Here
+                </Text>
               }
-              iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-              text={'Business Planning'}
-            />
-            <Feature
-              icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
-              iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'Financial Planning'}
-            />
-            <Feature
-              icon={
-                <Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />
-              }
-              iconBg={useColorModeValue('purple.100', 'purple.900')}
-              text={'Market Analysis'}
             />
           </Stack>
         </Stack>
-        <Flex>
+        <Flex p={5}>
           <Image
             rounded={'md'}
-            alt={'feature image'}
+            alt={'Project Image'}
             src={
               'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
             }
-            objectFit={'cover'}
           />
         </Flex>
       </SimpleGrid>
