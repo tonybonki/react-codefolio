@@ -8,9 +8,13 @@ import {
   Stack,
   StackDivider,
   Icon,
+  Link,
   useColorModeValue,
 } from '@chakra-ui/react';
 
+import { ExternalLinkIcon } from '@chakra-ui/icons';
+
+// This constant may be obsolete in the future
 const Skill = ({ text, icon, iconBg }: SkillProps) => {
   return (
     <Stack direction={'row'} align={'center'}>
@@ -34,18 +38,20 @@ export default function SplitWithImage() {
     <Container maxW={'4xl'} py={12}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
-          <Text
-            textTransform={'uppercase'}
+          <Link
             color={'teal.400'}
             fontWeight={600}
-            fontSize={'sm'}
+            fontSize={'15px'}
             bg={useColorModeValue('teal.50', 'teal.900')}
             p={2}
             alignSelf={'flex-start'}
             rounded={'md'}
+            // Replace this link with mapped link attribute
+            href="https://chakra-ui.com" 
+            isExternal
           >
-            Our Story
-          </Text>
+            Live Preview <ExternalLinkIcon mx="2px" />
+          </Link>
 
           <Heading color={useColorModeValue('gray.600', 'white')} fontSize={30}>
             Add Project Title here
