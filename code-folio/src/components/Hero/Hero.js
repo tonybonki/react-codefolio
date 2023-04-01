@@ -2,18 +2,14 @@ import {
   Container,
   Stack,
   Flex,
-  Tooltip,
   Box,
   Heading,
   Text,
   Button,
   Image,
   Icon,
-  IconButton,
-  createIcon,
   IconProps,
   useColorModeValue,
-  useMediaQuery,
   Link,
 } from '@chakra-ui/react';
 
