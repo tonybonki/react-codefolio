@@ -35,9 +35,9 @@ const Skill = ({ text, icon, iconBg }: SkillProps) => {
 
 export default function SplitWithImage() {
   return (
-    <Container maxW={'5xl'}  >
+    <Container maxW={'5xl'}>
       {}
-      <Heading color={useColorModeValue('gray.600', 'white')} my={4}>
+      <Heading color={useColorModeValue('gray.600', 'white')} my={9}>
         {' '}
         <Text color={useColorModeValue('teal.500', 'teal.300')} as={'span'}>
           Apps
@@ -51,7 +51,7 @@ export default function SplitWithImage() {
             fontWeight={600}
             fontSize={'14px'}
             bg={useColorModeValue('teal.50', 'teal.900')}
-            p={2}
+            p={1.5}
             alignSelf={'flex-start'}
             rounded={'md'}
             // Replace this link with mapped link attribute
