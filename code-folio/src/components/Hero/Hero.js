@@ -21,7 +21,7 @@ import { FiGithub } from 'react-icons/fi';
 
 export default function MainHero() {
   return (
-    <Container maxW={'7xl'}>
+    <Container my={10} maxW={'7xl'}>
       <Stack align={'center'} direction={{ base: 'column', md: 'row' }}>
         <Stack flex={1} spacing={{ base: 5, md: 5 }}>
           <Heading

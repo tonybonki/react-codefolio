@@ -35,30 +35,38 @@ const Skill = ({ text, icon, iconBg }: SkillProps) => {
 
 export default function SplitWithImage() {
   return (
-    <Container maxW={'4xl'} py={12}>
+    <Container maxW={'5xl'}  >
+      {}
+      <Heading color={useColorModeValue('gray.600', 'white')} my={4}>
+        {' '}
+        <Text color={useColorModeValue('teal.500', 'teal.300')} as={'span'}>
+          Apps
+        </Text>{' '}
+        and Projects
+      </Heading>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Link
             color={'teal.400'}
             fontWeight={600}
-            fontSize={'15px'}
+            fontSize={'14px'}
             bg={useColorModeValue('teal.50', 'teal.900')}
             p={2}
             alignSelf={'flex-start'}
             rounded={'md'}
             // Replace this link with mapped link attribute
-            href="https://chakra-ui.com" 
+            href="https://chakra-ui.com"
             isExternal
           >
             Live Preview <ExternalLinkIcon mx="2px" />
           </Link>
 
-          <Heading color={useColorModeValue('gray.600', 'white')} fontSize={30}>
+          <Heading color={useColorModeValue('gray.600', 'white')} fontSize={20}>
             Add Project Title here
           </Heading>
           <Text
             color={useColorModeValue('gray.600', 'white')}
-            fontSize={{ base: '17px', sm: '17px', lg: '19px' }}
+            fontSize={{ base: '13px', sm: '13px', lg: '15px' }}
           >
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
             aliquam aut debitis laborum recusandae blanditiis nisi reiciendis
