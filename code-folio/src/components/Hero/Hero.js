@@ -17,6 +17,7 @@ import { FiGithub } from 'react-icons/fi';
 
 export default function MainHero() {
   return (
+    // Change maxW????
     <Container my={10} maxW={'7xl'}>
       <Stack align={'center'} direction={{ base: 'column', md: 'row' }}>
         <Stack flex={1} spacing={{ base: 5, md: 5 }}>
@@ -77,14 +78,14 @@ export default function MainHero() {
             color={useColorModeValue('teal.50', 'teal.400')}
           />
           {/* The Image of Myself */}
-          <Box position={'relative'} m={3} width={'full'} overflow={'hidden'}>
+          <Box position={'relative'} m={3}  overflow={'hidden'}>
             <Image
               alt={'Hero Image'}
               fit={'cover'}
               marginLeft={'auto'}
               marginRight={'auto'}
               align={'center'}
-              w={'60%'}
+
               borderRadius={'10px'}
               src={'./code-selfie3.png'}
             />
