@@ -68,7 +68,7 @@ export default function SplitWithImage() {
             >
               {project.stack.map(tech => (
                 <Skill
-                  image={<Image src={`${tech}.png`} w={4} h={4} />}
+                  image={<Image src={`/icons/${tech}.png`} w={4} h={4} />}
                   text={
                     <Text
                       fontWeight={500}
@@ -100,10 +100,9 @@ export default function SplitWithImage() {
           </Stack>
           <Flex p={5}>
             <Image
-              rounded={'md'}
-              alt={'Project Image'}
+              alt={`${project.imageName}`}
               src={
-                'https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+                `/images/Busy Blogs/${project.imageName}`
               }
             />
           </Flex>
