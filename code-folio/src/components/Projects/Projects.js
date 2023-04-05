@@ -9,6 +9,7 @@ import {
   Stack,
   StackDivider,
   Link,
+  useMediaQuery,
   useColorModeValue,
 } from '@chakra-ui/react';
 
@@ -35,8 +36,11 @@ const Skill = ({ text, image, }: SkillProps) => {
 };
 
 export default function SplitWithImage() {
+  const [isLargerThanMobile] = useMediaQuery('(max-width: 680px)');
+  const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
+
   return (
-    <Container maxW={'5xl'}>
+    <Container maxW={'6xl'}>
       {}
       <Heading color={useColorModeValue('gray.600', 'white')} my={9}>
         {' '}
@@ -61,7 +65,9 @@ export default function SplitWithImage() {
             >
               {project.description}
             </Text>
-            <Heading color={'gray.600'} fontSize={20}>Built with</Heading>
+            <Heading color={'gray.600'} fontSize={20}>
+              Built with
+            </Heading>
             <Stack
               spacing={0.2}
               divider={<StackDivider borderColor={'gray.200'} />}
@@ -97,14 +103,27 @@ export default function SplitWithImage() {
                 Live Preview <ExternalLinkIcon mx="2px" />
               </Link>
             </Stack>
+            {isLargerThanMobile && (
+              <>
+                <Image
+                  alt={`${project.imageName}`}
+                  width={'250px'}
+                  marginX={'auto !important'}
+                  src={`/images/Busy Blogs/busy-blogs-mobile.png`}
+                />
+              </>
+            )}
           </Stack>
-          <Flex p={5}>
-            <Image
-              alt={`${project.imageName}`}
-              src={
-                `/images/Busy Blogs/${project.imageName}`
-              }
-            />
+          <Flex>
+            {isSmallerThanMobile && (
+              <>
+                <Image
+                  alt={`${project.imageName}`}
+                  objectFit={'contain'}
+                  src={`/images/Busy Blogs/busy-blogs-macbook.png`}
+                />
+              </>
+            )}
           </Flex>
         </SimpleGrid>
       ))}
