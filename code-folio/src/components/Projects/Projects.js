@@ -12,6 +12,7 @@ import {
   Link,
   useMediaQuery,
   useColorModeValue,
+  Spacer,
 } from '@chakra-ui/react';
 
 // Import Chakra UI Icons
@@ -47,7 +48,7 @@ export default function SplitWithImage() {
       <Heading color={useColorModeValue('gray.600', 'white')} my={9}>
         {' '}
         <Text color={useColorModeValue('teal.500', 'teal.300')} as={'span'}>
-          Apps
+          My Apps
         </Text>{' '}
         and Projects
       </Heading>
@@ -129,6 +130,7 @@ export default function SplitWithImage() {
               </>
             )}
           </Flex>
+          <Spacer />
         </SimpleGrid>
       ))}
     </Container>
