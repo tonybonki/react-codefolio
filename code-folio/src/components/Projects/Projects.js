@@ -113,7 +113,7 @@ export default function SplitWithImage() {
                   alt={`${project.imageName}`}
                   width={"250px"}
                   marginX={"auto !important"}
-                  src={`/images/Busy Blogs/busy-blogs-mobile.png`}
+                  src={`./${project.mobileImageName}`}
                 />
               </>
             )}
@@ -124,7 +124,7 @@ export default function SplitWithImage() {
                 <Image
                   alt={`${project.imageName}`}
                   objectFit={"contain"}
-                  src={`/images/Busy Blogs/busy-blogs-macbook.png`}
+                  src={`./${project.macbookImageName}`}
                 />
               </>
             )}
