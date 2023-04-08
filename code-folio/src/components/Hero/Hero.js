@@ -14,12 +14,11 @@ import {
 } from '@chakra-ui/react';
 
 import { FiGithub } from 'react-icons/fi';
-
 export default function MainHero() {
   return (
     // Change maxW????
     <Container my={10} maxW={'7xl'}>
-      <Stack align={'center'} direction={{ base: 'column', md: 'row' }}>
+      <Stack direction={{ base: 'column', md: 'row' }}>
         <Stack flex={1} spacing={{ base: 5, md: 5 }}>
           <Heading
             lineHeight={1.1}
