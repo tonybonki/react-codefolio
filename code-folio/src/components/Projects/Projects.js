@@ -73,7 +73,7 @@ export default function SplitWithImage() {
               {project.description}
             </Text>
             <Heading color={textColor[colorMode]} fontSize={20}>
-              Built with
+              Software Stack
             </Heading>
             <Stack
               spacing={0.2}
