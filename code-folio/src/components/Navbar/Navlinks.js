@@ -20,7 +20,7 @@ export const NAV_ITEMS = [
         icon: <AiOutlineFundProjectionScreen size={17} />,
         label: 'Projects',
         subLabel: "Websites and apps that I've built.",
-        href: '#',
+        href: '#projects',
       },
       {
         icon: <AiOutlineCode size={17} />,

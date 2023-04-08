@@ -43,12 +43,19 @@ export default function SplitWithImage() {
   const bgColor = { light: 'teal.50', dark: 'teal.800' };
 
   return (
-    <Container maxW={'6xl'}>
-      {}
+    <Container marginTop={'10%'} maxW={'6xl'}>
+      {/* Hide Apps Icon in Mobile width */}
+      {isSmallerThanMobile && (
+        <>
+          <Image mx={'auto'} boxSize={20} src="./app-store.png" />
+        </>
+      )}
+
       <Heading
-        textAlign={'center'}
+        id="projects"
+        mt={5}
+        textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
         color={useColorModeValue('gray.600', 'white')}
-        my={9}
       >
         {' '}
         <Text color={useColorModeValue('teal.500', 'teal.300')} as={'span'}>
@@ -56,6 +63,32 @@ export default function SplitWithImage() {
         </Text>{' '}
         and Projects
       </Heading>
+      <Text
+        mx={'auto'}
+        width={'50%'}
+        color={useColorModeValue('gray.600', 'white')}
+        mb={20}
+        textAlign={'center'}
+      >
+        This is a list of some of the apps I've built using different coding
+        languages. Click the{' '}
+        <Link
+          color={linkColor[colorMode]}
+          colorScheme={'teal'}
+          fontWeight={600}
+          fontSize={'14px'}
+          bg={bgColor[colorMode]}
+          p={1}
+          marginTop={3}
+          alignSelf={'flex-start'}
+          rounded={'md'}
+          // Replace this link with mapped link attribute
+          href={'#projects'}
+        >
+          Live Preview <ExternalLinkIcon mx="2px" />
+        </Link>{' '}
+       button to view the website/app live.
+      </Text>
       {/* Map Projects */}
       {projects.map(project => (
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
