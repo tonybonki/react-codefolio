@@ -77,14 +77,13 @@ export default function MainHero() {
             color={useColorModeValue('teal.50', 'teal.400')}
           />
           {/* The Image of Myself */}
-          <Box position={'relative'} m={3}  overflow={'hidden'}>
+          <Box position={'relative'} m={3} overflow={'hidden'}>
             <Image
               alt={'Hero Image'}
               fit={'cover'}
               marginLeft={'auto'}
               marginRight={'auto'}
               align={'center'}
-
               borderRadius={'10px'}
               src={'./code-selfie3.png'}
             />

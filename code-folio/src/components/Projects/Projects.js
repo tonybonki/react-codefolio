@@ -45,26 +45,30 @@ export default function SplitWithImage() {
   return (
     <Container maxW={'6xl'}>
       {}
-      <Heading color={useColorModeValue('gray.600', 'white')} my={9}>
+      <Heading
+        textAlign={'center'}
+        color={useColorModeValue('gray.600', 'white')}
+        my={9}
+      >
         {' '}
         <Text color={useColorModeValue('teal.500', 'teal.300')} as={'span'}>
-          My Apps
+          Apps
         </Text>{' '}
         and Projects
       </Heading>
       {/* Map Projects */}
-      {projects.map((project) => (
+      {projects.map(project => (
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={4}>
             <Heading color={textColor[colorMode]} fontSize={30}>
-              {project.titleFname}{" "}
-              <Text as={"span"} color={project.colorTheme}>
+              {project.titleFname}{' '}
+              <Text as={'span'} color={project.colorTheme}>
                 {project.titleSname}
               </Text>
             </Heading>
             <Text
               color={textColor[colorMode]}
-              fontSize={{ base: "13px", sm: "13px", lg: "15px" }}
+              fontSize={{ base: '13px', sm: '13px', lg: '15px' }}
             >
               {project.description}
             </Text>
@@ -73,17 +77,15 @@ export default function SplitWithImage() {
             </Heading>
             <Stack
               spacing={0.2}
-              divider={
-                <StackDivider borderColor={dividerColor[colorMode]} />
-              }
+              divider={<StackDivider borderColor={dividerColor[colorMode]} />}
             >
-              {project.stack.map((tech) => (
+              {project.stack.map(tech => (
                 <Skill
                   image={<Image src={`/icons/${tech}.png`} w={4} h={4} />}
                   text={
                     <Text
                       fontWeight={500}
-                      fontSize={{ base: "11px", sm: "12px", lg: "13px" }}
+                      fontSize={{ base: '11px', sm: '12px', lg: '13px' }}
                       color={textColor[colorMode]}
                     >
                       {tech}
@@ -95,12 +97,12 @@ export default function SplitWithImage() {
                 color={linkColor[colorMode]}
                 colorScheme={'teal'}
                 fontWeight={600}
-                fontSize={"14px"}
+                fontSize={'14px'}
                 bg={bgColor[colorMode]}
                 p={1}
                 marginTop={3}
-                alignSelf={"flex-start"}
-                rounded={"md"}
+                alignSelf={'flex-start'}
+                rounded={'md'}
                 // Replace this link with mapped link attribute
                 href={project.previewLink}
                 isExternal
@@ -112,8 +114,8 @@ export default function SplitWithImage() {
               <>
                 <Image
                   alt={`${project.imageName}`}
-                  width={"250px"}
-                  marginX={"auto !important"}
+                  width={'250px'}
+                  marginX={'auto !important'}
                   src={`./${project.mobileImageName}`}
                 />
               </>
@@ -124,7 +126,7 @@ export default function SplitWithImage() {
               <>
                 <Image
                   alt={`${project.imageName}`}
-                  objectFit={"contain"}
+                  objectFit={'contain'}
                   src={`./${project.macbookImageName}`}
                 />
               </>
