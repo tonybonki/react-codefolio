@@ -50,7 +50,7 @@ export default function SplitWithImage() {
   const bgColor = { light: 'teal.50', dark: 'teal.800' };
 
   return (
-    <Container marginTop={'10%'} maxW={'6xl'}>
+    <Container marginTop={'10%'} mb={'5%'} maxW={'6xl'}>
       <Flex
         flex={1}
         justify={'center'}
@@ -67,7 +67,7 @@ export default function SplitWithImage() {
           color={useColorModeValue('teal.50', 'teal.400')}
         />
         {/* The Image of Myself */}
-        <Box position={'relative'} m={3} overflow={'hidden'}>
+        <Box position={'relative'}  overflow={'hidden'}>
           {/* Hide this App Icon in Mobile width */}
           {isSmallerThanMobile && (
             <>
