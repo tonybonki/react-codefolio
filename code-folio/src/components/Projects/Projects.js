@@ -14,9 +14,12 @@ import {
   useMediaQuery,
   useColorModeValue,
   Spacer,
+  Button,
 } from '@chakra-ui/react';
 
-// Import Blob background 
+import { FiGithub } from 'react-icons/fi';
+
+// Import Blob background
 import { Blob } from '../Hero/Hero';
 
 // Import Chakra UI Icons
@@ -88,7 +91,7 @@ export default function SplitWithImage() {
             mx={'auto'}
             width={'50%'}
             color={useColorModeValue('gray.600', 'white')}
-            mb={20}
+            mb={5}
             textAlign={'center'}
           >
             This is a list of some of the apps I've built using different coding
@@ -108,8 +111,28 @@ export default function SplitWithImage() {
             >
               Live Preview <ExternalLinkIcon mx="2px" />
             </Link>{' '}
-            button to view the website/app live.
+            button to view the website/app live. Click the github button below to view the projects on my github repository.
           </Text>
+          <Box textAlign={'center'}>
+            <Link
+              _hover={{
+                textDecoration: 'none',
+              }}
+              isExternal
+              href="https://github.com/tonybonki"
+            >
+              {' '}
+              <Button
+                textAlign={'center'}
+                size={'md'}
+                leftIcon={<FiGithub />}
+                colorScheme="teal"
+              >
+                Github
+              </Button>
+            </Link>
+            {/* Add Button or Component Here */}
+          </Box>
         </Box>
       </Flex>
 

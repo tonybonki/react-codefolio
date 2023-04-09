@@ -13,7 +13,6 @@ import {
   Link,
 } from '@chakra-ui/react';
 
-import { FiGithub } from 'react-icons/fi';
 export default function MainHero() {
   return (
     // Change maxW????
@@ -61,18 +60,7 @@ export default function MainHero() {
             direction={{ base: 'column', sm: 'row' }}
           >
             {/* Add hero components here*/}
-            <Link
-              _hover={{
-                textDecoration: 'none',
-              }}
-              isExternal
-              href="https://github.com/tonybonki"
-            >
-              {' '}
-              <Button size={'md'} leftIcon={<FiGithub />} colorScheme="teal">
-                Github
-              </Button>
-            </Link>
+
           </Stack>
         </Stack>
         {/* Image with Blob Background Color */}
