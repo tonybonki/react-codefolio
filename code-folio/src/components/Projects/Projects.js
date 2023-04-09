@@ -111,7 +111,23 @@ export default function SplitWithImage() {
             >
               Live Preview <ExternalLinkIcon mx="2px" />
             </Link>{' '}
-            button to view the website/app live. Click the github button below to view the projects on my github repository.
+            button to view the website/app live. To view the repository of my projects click the{' '}
+            <Link
+              color={linkColor[colorMode]}
+              colorScheme={'teal'}
+              fontWeight={600}
+              fontSize={'14px'}
+              bg={bgColor[colorMode]}
+              p={1}
+              marginTop={3}
+              alignSelf={'flex-start'}
+              rounded={'md'}
+              // Replace this link with mapped link attribute
+              href={'https://github.com/tonybonki'}
+            >
+              My Github Repo <ExternalLinkIcon mx="2px" />
+            </Link>{' '}
+            below to view the projects on my github repository.
           </Text>
           <Box textAlign={'center'}>
             <Link
@@ -125,10 +141,12 @@ export default function SplitWithImage() {
               <Button
                 textAlign={'center'}
                 size={'md'}
+                title="Go to my Github Repo"
                 leftIcon={<FiGithub />}
                 colorScheme="teal"
+                color={useColorModeValue('white', 'white')}
               >
-                Github
+                My Github Repo
               </Button>
             </Link>
             {/* Add Button or Component Here */}
