@@ -78,7 +78,7 @@ export default function SplitWithImage() {
             color={useColorModeValue('gray.600', 'white')}
           >
             {' '}
-            <Text color={useColorModeValue('teal.500', 'teal.300')} as={'span'}>
+            <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
               Apps
             </Text>{' '}
             and Projects

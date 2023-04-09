@@ -41,7 +41,7 @@ export default function MainHero() {
             fontSize={{ base: '1l', sm: '2l', lg: 'xl' }}
           >
             <Text as={'span'} position={'relative'}>
-              I portfolio website that I coded myself
+              Change this to somthing useful this is just dummy text.
             </Text>
             <br />
             <Text as={'span'} color={useColorModeValue('teal.500', 'teal.300')}>
@@ -75,6 +75,7 @@ export default function MainHero() {
             </Link>
           </Stack>
         </Stack>
+        {/* Image with Blob Background Color */}
         <Flex
           flex={1}
           justify={'center'}
@@ -108,7 +109,7 @@ export default function MainHero() {
   );
 }
 
-// The Blob image behind the photo of myself
+// The Blob background
 export const Blob = (props: IconProps) => {
   return (
     <Icon
