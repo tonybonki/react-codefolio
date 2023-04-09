@@ -5,12 +5,10 @@ import {
   Box,
   Heading,
   Text,
-  Button,
   Image,
   Icon,
   IconProps,
   useColorModeValue,
-  Link,
 } from '@chakra-ui/react';
 
 export default function MainHero() {

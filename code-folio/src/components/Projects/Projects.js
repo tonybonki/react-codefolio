@@ -76,7 +76,7 @@ export default function SplitWithImage() {
           )}
           <Heading
             id="projects"
-            mt={5}
+            my={5}
             textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
             color={useColorModeValue('gray.600', 'white')}
           >
@@ -89,13 +89,13 @@ export default function SplitWithImage() {
           {/* Head */}
           <Text
             mx={'auto'}
-            width={'50%'}
+            width={{ base: 'left', sm: 'none', lg: '50%' }}
             color={useColorModeValue('gray.600', 'white')}
             mb={5}
-            textAlign={'center'}
+            textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
           >
-            This is a list of some of the apps I've built using different coding
-            languages. Click the{' '}
+            Here are a list of some of the apps I've built using different
+            coding languages. Click the{' '}
             <Link
               color={linkColor[colorMode]}
               colorScheme={'teal'}
@@ -111,7 +111,8 @@ export default function SplitWithImage() {
             >
               Live Preview <ExternalLinkIcon mx="2px" />
             </Link>{' '}
-            button to view the website/app live. To view the repository of my projects click the{' '}
+            button to view the website/app live. To view the repository of my
+            projects click the{' '}
             <Link
               color={linkColor[colorMode]}
               colorScheme={'teal'}
@@ -129,7 +130,7 @@ export default function SplitWithImage() {
             </Link>{' '}
             below to view the projects on my github repository.
           </Text>
-          <Box textAlign={'center'}>
+          <Box textAlign={{ base: 'left', sm: 'none', lg: 'center' }}>
             <Link
               _hover={{
                 textDecoration: 'none',
