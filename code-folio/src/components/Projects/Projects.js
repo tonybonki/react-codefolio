@@ -4,6 +4,7 @@ import {
   SimpleGrid,
   Image,
   Flex,
+  Box,
   Heading,
   Text,
   Stack,
@@ -14,6 +15,9 @@ import {
   useColorModeValue,
   Spacer,
 } from '@chakra-ui/react';
+
+// Import Blob background 
+import { Blob } from '../Hero/Hero';
 
 // Import Chakra UI Icons
 import { ExternalLinkIcon } from '@chakra-ui/icons';
@@ -44,51 +48,71 @@ export default function SplitWithImage() {
 
   return (
     <Container marginTop={'10%'} maxW={'6xl'}>
-      {/* Hide Apps Icon in Mobile width */}
-      {isSmallerThanMobile && (
-        <>
-          <Image mx={'auto'} boxSize={20} src="./app-store.png" />
-        </>
-      )}
+      <Flex
+        flex={1}
+        justify={'center'}
+        align={'center'}
+        position={'relative'}
+        w={'full'}
+      >
+        <Blob
+          w={'100%'}
+          h={'100%'}
+          position={'absolute'}
+          left={0}
+          zIndex={-1}
+          color={useColorModeValue('teal.50', 'teal.400')}
+        />
+        {/* The Image of Myself */}
+        <Box position={'relative'} m={3} overflow={'hidden'}>
+          {/* Hide this App Icon in Mobile width */}
+          {isSmallerThanMobile && (
+            <>
+              <Image mx={'auto'} boxSize={20} src="./app-store.png" />
+            </>
+          )}
+          <Heading
+            id="projects"
+            mt={5}
+            textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
+            color={useColorModeValue('gray.600', 'white')}
+          >
+            {' '}
+            <Text color={useColorModeValue('teal.500', 'teal.300')} as={'span'}>
+              Apps
+            </Text>{' '}
+            and Projects
+          </Heading>
+          {/* Head */}
+          <Text
+            mx={'auto'}
+            width={'50%'}
+            color={useColorModeValue('gray.600', 'white')}
+            mb={20}
+            textAlign={'center'}
+          >
+            This is a list of some of the apps I've built using different coding
+            languages. Click the{' '}
+            <Link
+              color={linkColor[colorMode]}
+              colorScheme={'teal'}
+              fontWeight={600}
+              fontSize={'14px'}
+              bg={bgColor[colorMode]}
+              p={1}
+              marginTop={3}
+              alignSelf={'flex-start'}
+              rounded={'md'}
+              // Replace this link with mapped link attribute
+              href={'#projects'}
+            >
+              Live Preview <ExternalLinkIcon mx="2px" />
+            </Link>{' '}
+            button to view the website/app live.
+          </Text>
+        </Box>
+      </Flex>
 
-      <Heading
-        id="projects"
-        mt={5}
-        textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
-        color={useColorModeValue('gray.600', 'white')}
-      >
-        {' '}
-        <Text color={useColorModeValue('teal.500', 'teal.300')} as={'span'}>
-          Apps
-        </Text>{' '}
-        and Projects
-      </Heading>
-      <Text
-        mx={'auto'}
-        width={'50%'}
-        color={useColorModeValue('gray.600', 'white')}
-        mb={20}
-        textAlign={'center'}
-      >
-        This is a list of some of the apps I've built using different coding
-        languages. Click the{' '}
-        <Link
-          color={linkColor[colorMode]}
-          colorScheme={'teal'}
-          fontWeight={600}
-          fontSize={'14px'}
-          bg={bgColor[colorMode]}
-          p={1}
-          marginTop={3}
-          alignSelf={'flex-start'}
-          rounded={'md'}
-          // Replace this link with mapped link attribute
-          href={'#projects'}
-        >
-          Live Preview <ExternalLinkIcon mx="2px" />
-        </Link>{' '}
-       button to view the website/app live.
-      </Text>
       {/* Map Projects */}
       {projects.map(project => (
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>

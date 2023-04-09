@@ -31,7 +31,21 @@ export default function MainHero() {
             </Text>
             <br />
             <Text as={'span'} color={useColorModeValue('teal.500', 'teal.300')}>
-              Codefolio!
+              Code-folio!
+            </Text>
+          </Heading>
+          <Heading
+            lineHeight={1.1}
+            fontWeight={500}
+            color={useColorModeValue('gray.600', 'white')}
+            fontSize={{ base: '1l', sm: '2l', lg: 'xl' }}
+          >
+            <Text as={'span'} position={'relative'}>
+              I portfolio website that I coded myself
+            </Text>
+            <br />
+            <Text as={'span'} color={useColorModeValue('teal.500', 'teal.300')}>
+              Code-folio!
             </Text>
           </Heading>
           <Text
@@ -69,8 +83,8 @@ export default function MainHero() {
           w={'full'}
         >
           <Blob
-            w={'90%'}
-            h={'90%'}
+            w={'100%'}
+            h={'100%'}
             position={'absolute'}
             left={0}
             zIndex={-1}
