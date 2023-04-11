@@ -40,6 +40,7 @@ export default function WithSubnavigation() {
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
+        zIndex={2}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
@@ -84,7 +85,8 @@ export default function WithSubnavigation() {
                   /
                 </Text>
                 <Stack display={'flex'} spacing={1} direction={'row'}>
-                  <Kbd borderRadius={2}>shift</Kbd>{' + '}
+                  <Kbd borderRadius={2}>shift</Kbd>
+                  {' + '}
                   <Kbd borderRadius={2}>N</Kbd>
                 </Stack>
               </>

@@ -14,7 +14,7 @@ import {
 export default function MainHero() {
   return (
     // Change maxW????
-    <Container my={10} maxW={'7xl'}>
+    <Container mb={10} mt={{base:'20px', lg:'100px'}} maxW={'7xl'}>
       <Stack direction={{ base: 'column', md: 'row' }}>
         <Stack flex={1} spacing={{ base: 5, md: 5 }}>
           <Heading
