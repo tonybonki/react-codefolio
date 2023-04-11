@@ -60,6 +60,7 @@ export default function SplitWithImage() {
       >
         <Blob
           w={'100%'}
+          opacity={'50%'}
           h={'100%'}
           position={'absolute'}
           left={0}
@@ -67,7 +68,7 @@ export default function SplitWithImage() {
           color={useColorModeValue('teal.50', 'teal.400')}
         />
         {/* The Image of Myself */}
-        <Box position={'relative'}  overflow={'hidden'}>
+        <Box position={'relative'} overflow={'hidden'}>
           {/* Hide this App Icon in Mobile width */}
           {isSmallerThanMobile && (
             <>
@@ -140,6 +141,7 @@ export default function SplitWithImage() {
             >
               {' '}
               <Button
+                mb={'5%'}
                 textAlign={'center'}
                 size={'md'}
                 title="Go to my Github Repo"
@@ -220,7 +222,36 @@ export default function SplitWithImage() {
               </>
             )}
           </Stack>
-          <Flex>
+          <Flex
+            flex={1}
+            justify={'center'}
+            align={'center'}
+            position={'relative'}
+            w={'full'}
+          >
+            <Blob
+              w={'100%'}
+              h={'100%'}
+              position={'absolute'}
+              left={0}
+              zIndex={-1}
+              opacity={'20%'}
+              color={project.colorTheme}
+            />
+            {/* The Image of Myself */}
+            <Box position={'relative'} m={3} overflow={'hidden'}>
+              {isSmallerThanMobile && (
+                <>
+                  <Image
+                    alt={`${project.imageName}`}
+                    objectFit={'contain'}
+                    src={`./${project.macbookImageName}`}
+                  />
+                </>
+              )}
+            </Box>
+          </Flex>
+          {/* <Flex>
             {isSmallerThanMobile && (
               <>
                 <Image
@@ -230,7 +261,7 @@ export default function SplitWithImage() {
                 />
               </>
             )}
-          </Flex>
+          </Flex> */}
           <Spacer />
         </SimpleGrid>
       ))}
