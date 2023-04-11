@@ -42,13 +42,13 @@ export const NAV_ITEMS = [
       {
         icon: <AiOutlineHeart />,
         label: 'Testimonials',
-        subLabel: 'An exclusive list for contract work',
+        subLabel: 'Contractor Success Stories',
         href: '#',
       },
       {
         icon: <AiOutlineLinkedin />,
         label: 'My Resume',
-        subLabel: ' My curriculum vitae',
+        subLabel: ' My Curriculum Vitae',
         href: '#',
       },
     ],
@@ -71,7 +71,7 @@ export const NAV_ITEMS = [
       {
         icon: <AiOutlineCloud />,
         label: 'My Dreams and Goals',
-        subLabel: 'Who and what I aspire to be.',
+        subLabel: 'Who and what I aspire to be',
         href: '#',
       },
     ],
