@@ -65,6 +65,7 @@ export default function SplitWithImage() {
           position={'absolute'}
           left={0}
           zIndex={-1}
+          display={{ base: 'none', sm: 'block', lg: 'block' }}
           color={useColorModeValue('teal.50', 'teal.400')}
         />
         {/* The Image of Myself */}
@@ -234,8 +235,9 @@ export default function SplitWithImage() {
               h={'100%'}
               position={'absolute'}
               left={0}
+              opacity={'40%'}
               zIndex={-1}
-              opacity={'20%'}
+              display={{ base: 'none', sm: 'block', lg: 'block' }}
               color={project.colorTheme}
             />
             {/* The Image of Myself */}
@@ -251,17 +253,6 @@ export default function SplitWithImage() {
               )}
             </Box>
           </Flex>
-          {/* <Flex>
-            {isSmallerThanMobile && (
-              <>
-                <Image
-                  alt={`${project.imageName}`}
-                  objectFit={'contain'}
-                  src={`./${project.macbookImageName}`}
-                />
-              </>
-            )}
-          </Flex> */}
           <Spacer />
         </SimpleGrid>
       ))}
