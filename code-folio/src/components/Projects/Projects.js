@@ -50,7 +50,12 @@ export default function SplitWithImage() {
   const bgColor = { light: 'teal.50', dark: 'teal.800' };
 
   return (
-    <Container marginTop={'10%'} mb={'5%'} maxW={'6xl'}>
+    <Container
+      id="projects"
+      marginTop={{ base: '20%', lg: '5%' }}
+      mb={'5%'}
+      maxW={'6xl'}
+    >
       <Flex
         flex={1}
         justify={'center'}
@@ -77,7 +82,6 @@ export default function SplitWithImage() {
             </>
           )}
           <Heading
-            id="projects"
             my={5}
             textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
             color={useColorModeValue('gray.600', 'white')}
@@ -142,9 +146,9 @@ export default function SplitWithImage() {
             >
               {' '}
               <Button
-                mb={'5%'}
+                mb={{ base: '25%', lg: '5%' }}
                 textAlign={'center'}
-                size={'md'}
+                size={{ base: 'sm', lg: 'md' }}
                 title="Go to my Github Repo"
                 leftIcon={<FiGithub />}
                 colorScheme="teal"
