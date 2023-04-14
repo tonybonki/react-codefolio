@@ -39,6 +39,15 @@ export default function WithSubnavigation() {
   const [isLargerThanMobile] = useMediaQuery('(min-width: 680px)');
   const [mode, setMode] = useState('Night Mode');
 
+  const handleKeyDown = event => {
+    if (event.shiftKey && event.code === 'KeyN') {
+      setMode(mode === 'Night Mode' ? 'Light Mode' : 'Night Mode');
+      // This line of code prevents the website from
+      // slowing down if the funtion is executed many times
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+  };
+
   const handleClick = () => {
     setMode(mode === 'Night Mode' ? 'Light Mode' : 'Night Mode');
   };
