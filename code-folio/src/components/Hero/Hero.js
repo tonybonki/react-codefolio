@@ -1,8 +1,6 @@
 import {
   Container,
   Stack,
-  Flex,
-  Box,
   Heading,
   Text,
   Button,
@@ -14,10 +12,9 @@ import {
 
 export default function MainHero() {
   return (
-    // Change maxW????
     <Container mb={10} mt={{ base: '20px', lg: '100px' }} maxW={'7xl'}>
       <Stack direction={{ base: 'column', md: 'row' }}>
-        <Stack flex={1} spacing={{ base: 5, md: 5 }}>
+        <Stack  flex={1} spacing={{ base: 5, md: 5 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
@@ -48,7 +45,8 @@ export default function MainHero() {
           </Heading>
           <Text
             color={useColorModeValue('gray.600', 'white')}
-            width={'70%'}
+            width={{ base: '100%', lg: '70%' }}
+            
             fontSize={{ base: '17px', sm: '17px', lg: '19px' }}
           >
             Hi, my name is Tony Bonki. I am a student of the University of DCU
