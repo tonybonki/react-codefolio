@@ -5,6 +5,7 @@ import {
   Box,
   Heading,
   Text,
+  Button,
   Image,
   Icon,
   IconProps,
@@ -14,7 +15,7 @@ import {
 export default function MainHero() {
   return (
     // Change maxW????
-    <Container mb={10} mt={{base:'20px', lg:'100px'}} maxW={'7xl'}>
+    <Container mb={10} mt={{ base: '20px', lg: '100px' }} maxW={'7xl'}>
       <Stack direction={{ base: 'column', md: 'row' }}>
         <Stack flex={1} spacing={{ base: 5, md: 5 }}>
           <Heading
@@ -47,6 +48,7 @@ export default function MainHero() {
           </Heading>
           <Text
             color={useColorModeValue('gray.600', 'white')}
+            width={'70%'}
             fontSize={{ base: '17px', sm: '17px', lg: '19px' }}
           >
             Hi, my name is Tony Bonki. I am a student of the University of DCU
@@ -57,39 +59,22 @@ export default function MainHero() {
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}
           >
-            {/* Add hero components here*/}
-
+            <Button size="sm" colorScheme="teal">
+              Projects
+            </Button>
+            <Button size="sm" colorScheme="teal">
+              Contact Me
+            </Button>
           </Stack>
         </Stack>
-        {/* Image with Blob Background Color */}
-        <Flex
-          flex={1}
-          justify={'center'}
+        {/* The Image of Myself */}
+        <Image
+          w={'400px !important'}
+          alt={'Hero Image'}
           align={'center'}
-          position={'relative'}
-          w={'full'}
-        >
-          <Blob
-            w={'100%'}
-            h={'100%'}
-            position={'absolute'}
-            left={0}
-            zIndex={-1}
-            color={useColorModeValue('teal.50', 'teal.400')}
-          />
-          {/* The Image of Myself */}
-          <Box position={'relative'} m={3} overflow={'hidden'}>
-            <Image
-              alt={'Hero Image'}
-              fit={'cover'}
-              marginLeft={'auto'}
-              marginRight={'auto'}
-              align={'center'}
-              borderRadius={'10px'}
-              src={'./code-selfie3.png'}
-            />
-          </Box>
-        </Flex>
+          borderRadius={'10px'}
+          src={'./code-selfie3.png'}
+        />
       </Stack>
     </Container>
   );

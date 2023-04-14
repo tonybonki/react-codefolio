@@ -1,3 +1,6 @@
+// Import React Functions and Components
+import React, { useState } from 'react';
+
 import {
   Box,
   Flex,
@@ -14,6 +17,7 @@ import {
   useColorModeValue,
   useDisclosure,
   useMediaQuery,
+  Tooltip,
   Kbd,
 } from '@chakra-ui/react';
 
@@ -33,6 +37,11 @@ import { NAV_ITEMS } from './Navlinks';
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const [isLargerThanMobile] = useMediaQuery('(min-width: 680px)');
+  const [mode, setMode] = useState('Night Mode');
+
+  const handleClick = () => {
+    setMode(mode === 'Night Mode' ? 'Light Mode' : 'Night Mode');
+  };
 
   return (
     <Box>
@@ -77,21 +86,31 @@ export default function WithSubnavigation() {
           alignItems={'center'}
           spacing={4}
         >
-          <Flex alignItems={'center'}>
-            <ColorModeToggle />
-            {isLargerThanMobile && (
-              <>
-                <Text m={2} fontSize={12} fontWeight={800}>
-                  /
-                </Text>
-                <Stack display={'flex'} spacing={1} direction={'row'}>
-                  <Kbd borderRadius={2}>shift</Kbd>
-                  {' + '}
-                  <Kbd borderRadius={2}>N</Kbd>
-                </Stack>
-              </>
-            )}
-          </Flex>
+          <Tooltip
+            fontSize="sm"
+            openDelay={400}
+            bg="teal.500"
+            hasArrow
+            color={useColorModeValue('white', 'white')}
+            closeOnClick={false}
+            label={mode}
+          >
+            <Flex onClick={handleClick} alignItems={'center'}>
+              <ColorModeToggle />
+              {isLargerThanMobile && (
+                <>
+                  <Text m={2} fontSize={12} fontWeight={800}>
+                    /
+                  </Text>
+                  <Stack display={'flex'} spacing={1} direction={'row'}>
+                    <Kbd borderRadius={2}>shift</Kbd>
+                    {' + '}
+                    <Kbd borderRadius={2}>N</Kbd>
+                  </Stack>
+                </>
+              )}
+            </Flex>
+          </Tooltip>
         </Stack>
       </Flex>
 
