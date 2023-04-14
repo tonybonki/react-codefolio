@@ -1,5 +1,4 @@
-// Import React Functions and Components
-import React, { useState } from 'react';
+
 
 import {
   Box,
@@ -17,7 +16,6 @@ import {
   useColorModeValue,
   useDisclosure,
   useMediaQuery,
-  Tooltip,
   Kbd,
 } from '@chakra-ui/react';
 
@@ -37,20 +35,7 @@ import { NAV_ITEMS } from './Navlinks';
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const [isLargerThanMobile] = useMediaQuery('(min-width: 680px)');
-  const [mode, setMode] = useState('Night Mode');
 
-  const handleKeyDown = event => {
-    if (event.shiftKey && event.code === 'KeyN') {
-      setMode(mode === 'Night Mode' ? 'Light Mode' : 'Night Mode');
-      // This line of code prevents the website from
-      // slowing down if the funtion is executed many times
-      document.removeEventListener('keydown', handleKeyDown);
-    }
-  };
-
-  const handleClick = () => {
-    setMode(mode === 'Night Mode' ? 'Light Mode' : 'Night Mode');
-  };
 
   return (
     <Box>
@@ -95,16 +80,7 @@ export default function WithSubnavigation() {
           alignItems={'center'}
           spacing={4}
         >
-          <Tooltip
-            fontSize="sm"
-            openDelay={400}
-            bg="teal.500"
-            hasArrow
-            color={useColorModeValue('white', 'white')}
-            closeOnClick={false}
-            label={mode}
-          >
-            <Flex onClick={handleClick} alignItems={'center'}>
+            <Flex alignItems={'center'}>
               <ColorModeToggle />
               {isLargerThanMobile && (
                 <>
@@ -119,7 +95,6 @@ export default function WithSubnavigation() {
                 </>
               )}
             </Flex>
-          </Tooltip>
         </Stack>
       </Flex>
 
