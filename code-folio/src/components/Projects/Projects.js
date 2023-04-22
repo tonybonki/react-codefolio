@@ -112,7 +112,6 @@ export default function SplitWithImage() {
               marginTop={3}
               alignSelf={'flex-start'}
               rounded={'md'}
-              // Replace this link with mapped link attribute
               href={'#projects'}
             >
               Live Preview <ExternalLinkIcon mx="2px" />
@@ -129,7 +128,6 @@ export default function SplitWithImage() {
               marginTop={3}
               alignSelf={'flex-start'}
               rounded={'md'}
-              // Replace this link with mapped link attribute
               href={'https://github.com/tonybonki'}
             >
               My Github Repo <ExternalLinkIcon mx="2px" />

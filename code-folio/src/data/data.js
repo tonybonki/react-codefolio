@@ -26,3 +26,17 @@ export const projects = [
     previewLink: 'https://tony-bonki-portfolio.netlify.app/',
   },
 ];
+
+// My Jobs
+
+export const jobs = [
+  {
+    jobTitle: 'ICT Clerical Officer',
+    company: 'The State Laboratory',
+    timeWorked: '1 Year',
+    description:
+      'I provided ICT support to all employees around the workplace. I performed daily checks, updated the website when neccesary, monitored the internet firewall/email filtering, bbuilt out a number of laptops imaging custom windows OS for employees that use the one-device setup.',
+    jobImageName: 'stateLaboratory.jpg',
+    skills: ['Web Development', 'Computer Hardware', 'Networking', 'VM', 'Firewall'],
+  },
+];

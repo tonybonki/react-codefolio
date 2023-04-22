@@ -3,7 +3,7 @@ import React from 'react';
 import MainHero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
 import SplitWithImage from './components/Projects/Projects';
-
+import ExperienceList from './components/WorkExperience/WorkExperience';
 import {
   ChakraProvider,
 } from '@chakra-ui/react';
@@ -16,6 +16,7 @@ function App() {
       <Navbar />
       <MainHero />
       <SplitWithImage />
+      <ExperienceList />
     </ChakraProvider>
   );
 }
