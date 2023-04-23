@@ -1,5 +1,6 @@
 import React from 'react';
 import { jobs } from '../../data/data';
+
 import {
   Box,
   Heading,
@@ -11,18 +12,19 @@ import {
   Tag,
   Wrap,
   WrapItem,
-  SpaceProps,
   useColorModeValue,
   Container,
   VStack,
 } from '@chakra-ui/react';
+
+import { textColor, bgColor, dividerColor, linkColor } from '../theme';
 
 const JobSkills: React.FC<IJobSkills> = props => {
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map(tag => {
         return (
-          <Tag size={'md'} variant="solid" colorScheme="teal" key={tag}>
+          <Tag size={'sm'} variant="solid" colorScheme="teal" key={tag}>
             {tag}
           </Tag>
         );
@@ -62,9 +64,7 @@ const ExperienceList = () => {
                 <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
                   <Image
                     transform="scale(1.0)"
-                    src={
-                      'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
-                    }
+                    src={`./jobImages/${job.jobImageName}`}
                     alt="some text"
                     objectFit="contain"
                     width="100%"
@@ -75,17 +75,18 @@ const ExperienceList = () => {
                   />
                 </Link>
               </Box>
-              <JobSkills tags={['Engineering', 'Product']} marginTop="3" />
-              <Heading fontSize="xl" marginTop="2">
-                <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                  Some blog title
-                </Link>
+              <JobSkills
+                tags={job.skills}
+                marginTop="3"
+              />
+              <Heading fontSize="25px" marginTop="2">
+                {job.company}
+              </Heading>
+              <Heading fontWeight={500} fontSize="16px" marginTop="2">
+                {job.title}
               </Heading>
               <Text as="p" fontSize="md" marginTop="2">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+               {job.description}
               </Text>
               <HStack
                 marginTop="2"

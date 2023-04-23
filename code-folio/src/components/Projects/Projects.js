@@ -17,6 +17,10 @@ import {
   Button,
 } from '@chakra-ui/react';
 
+// Import Color themes
+
+import { textColor, bgColor, dividerColor, linkColor } from '../theme';
+
 import { FiGithub } from 'react-icons/fi';
 
 // Import Blob background
@@ -40,15 +44,9 @@ const Skill = ({ text, image }: SkillProps) => {
 };
 
 export default function SplitWithImage() {
+  const { colorMode } = useColorMode();
   const [isLargerThanMobile] = useMediaQuery('(max-width: 680px)');
   const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
-  // Color mode constants
-  const { colorMode } = useColorMode();
-  const textColor = { light: 'gray.600', dark: 'white.400' };
-  const dividerColor = { light: 'gray.200', dark: 'gray.600' };
-  const linkColor = { light: 'teal.400', dark: 'teal.200' };
-  const bgColor = { light: 'teal.50', dark: 'teal.800' };
-
   return (
     <Container
       id="projects"
