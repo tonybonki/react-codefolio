@@ -15,6 +15,7 @@ import {
   useColorModeValue,
   Container,
   VStack,
+  Center,
 } from '@chakra-ui/react';
 
 import { textColor, bgColor, dividerColor, linkColor } from '../theme';
@@ -50,9 +51,16 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = props => {
 
 const ExperienceList = () => {
   return (
-    <Container maxW={'7xl'} p="12">
-      <Heading as="h1" marginTop="5">
-        Work Experience
+    <Container
+      color={useColorModeValue('gray.600', 'white')}
+      maxW={'7xl'}
+      p="12"
+    >
+      <Heading textAlign={'center'} as="h1" marginTop="5">
+        Work{' '}
+        <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
+          Experience
+        </Text>
       </Heading>
       <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
@@ -60,12 +68,15 @@ const ExperienceList = () => {
         {jobs.map(job => (
           <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
             <Box w="100%">
+              <Heading textAlign={'center'} fontSize="25px" marginBottom="4">
+                {job.company}
+              </Heading>
               <Box borderRadius="lg" overflow="hidden">
-                <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                <Link isExternal href={job.website} textDecoration="none" _hover={{ textDecoration: 'none' }}>
                   <Image
                     transform="scale(1.0)"
                     src={`./jobImages/${job.jobImageName}`}
-                    alt="some text"
+                    alt={job.company}
                     objectFit="contain"
                     width="100%"
                     transition="0.3s ease-in-out"
@@ -75,18 +86,19 @@ const ExperienceList = () => {
                   />
                 </Link>
               </Box>
-              <JobSkills
-                tags={job.skills}
-                marginTop="3"
-              />
-              <Heading fontSize="25px" marginTop="2">
-                {job.company}
-              </Heading>
-              <Heading fontWeight={500} fontSize="16px" marginTop="2">
-                {job.title}
-              </Heading>
+              <JobSkills tags={job.skills} marginTop="3" />
+
+              <HStack
+                marginTop="2"
+                spacing="2"
+                display="flex"
+                alignItems="center"
+              >
+                <Text fontWeight={'bold'}>Role:</Text>
+                <Text>{job.title}</Text>
+              </HStack>
               <Text as="p" fontSize="md" marginTop="2">
-               {job.description}
+                {job.description}
               </Text>
               <HStack
                 marginTop="2"
@@ -95,7 +107,7 @@ const ExperienceList = () => {
                 alignItems="center"
               >
                 <Text fontWeight={'bold'}>Duration:</Text>
-                <Text>1 Year</Text>
+                <Text>{job.timeWorked}</Text>
               </HStack>
             </Box>
           </WrapItem>
