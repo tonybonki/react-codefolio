@@ -7,25 +7,30 @@ import {
   Link,
   Image,
   Text,
+  Button,
   Divider,
   HStack,
   Tag,
   Wrap,
   WrapItem,
+  useMediaQuery,
   useColorModeValue,
   Container,
+  useColorMode,
   VStack,
-  Center,
 } from '@chakra-ui/react';
 
-import { textColor, bgColor, dividerColor, linkColor } from '../theme';
+import { textColor, linkColor } from '../theme';
 
-const JobSkills: React.FC<IJobSkills> = props => {
+export const JobSkills: React.FC<IJobSkills> = props => {
+  const [isLargerThanMobile] = useMediaQuery('(max-width: 680px)');
+  const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map(tag => {
         return (
-          <Tag size={'sm'} variant="solid" colorScheme="teal" key={tag}>
+          
+          <Tag size={'sm'} variant="solid" colorScheme='teal' key={tag}>
             {tag}
           </Tag>
         );
@@ -50,6 +55,7 @@ export const BlogAuthor: React.FC<BlogAuthorProps> = props => {
 };
 
 const ExperienceList = () => {
+  const { colorMode } = useColorMode();
   return (
     <Container
       color={useColorModeValue('gray.600', 'white')}
@@ -72,7 +78,12 @@ const ExperienceList = () => {
                 {job.company}
               </Heading>
               <Box borderRadius="lg" overflow="hidden">
-                <Link isExternal href={job.website} textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                <Link
+                  isExternal
+                  href={job.website}
+                  textDecoration="none"
+                  _hover={{ textDecoration: 'none' }}
+                >
                   <Image
                     transform="scale(1.0)"
                     src={`./jobImages/${job.jobImageName}`}
@@ -94,7 +105,9 @@ const ExperienceList = () => {
                 display="flex"
                 alignItems="center"
               >
-                <Text fontWeight={'bold'}>Role:</Text>
+                <Text color={linkColor[colorMode]} fontWeight={'bold'}>
+                  Role:
+                </Text>
                 <Text>{job.title}</Text>
               </HStack>
               <Text as="p" fontSize="md" marginTop="2">
@@ -106,9 +119,16 @@ const ExperienceList = () => {
                 display="flex"
                 alignItems="center"
               >
-                <Text fontWeight={'bold'}>Duration:</Text>
+                <Text color={linkColor[colorMode]} fontWeight={'bold'}>
+                  Duration:
+                </Text>
                 <Text>{job.timeWorked}</Text>
               </HStack>
+              <Link isExternal href={job.website}>
+                <Button marginTop={'10px'} size="sm" colorScheme="teal">
+                  Company Website
+                </Button>
+              </Link>
             </Box>
           </WrapItem>
         ))}
