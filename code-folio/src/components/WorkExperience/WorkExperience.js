@@ -20,7 +20,9 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-import { textColor, linkColor } from '../theme';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
+
+import { textColor, linkColor, bgColor } from '../theme';
 
 export const JobSkills: React.FC<IJobSkills> = props => {
   const [isLargerThanMobile] = useMediaQuery('(max-width: 680px)');
@@ -29,8 +31,12 @@ export const JobSkills: React.FC<IJobSkills> = props => {
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map(tag => {
         return (
-          
-          <Tag size={'sm'} variant="solid" colorScheme='teal' key={tag}>
+          <Tag
+            fontSize={{ base: '10px', sm: 'none', lg: '13' }}
+            variant="solid"
+            colorScheme="teal"
+            key={tag}
+          >
             {tag}
           </Tag>
         );
@@ -39,35 +45,75 @@ export const JobSkills: React.FC<IJobSkills> = props => {
   );
 };
 
-export const BlogAuthor: React.FC<BlogAuthorProps> = props => {
-  return (
-    <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-      <Image
-        borderRadius="full"
-        boxSize="40px"
-        src="https://100k-faces.glitch.me/random-image"
-      />
-      <Text fontWeight="medium">{props.name}</Text>
-      <Text>—</Text>
-      <Text>{props.date.toLocaleDateString()}</Text>
-    </HStack>
-  );
-};
 
 const ExperienceList = () => {
   const { colorMode } = useColorMode();
+  const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
   return (
     <Container
       color={useColorModeValue('gray.600', 'white')}
       maxW={'7xl'}
       p="12"
     >
-      <Heading textAlign={'center'} as="h1" marginTop="5">
-        Work{' '}
-        <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
+      <Box position={'relative'} overflow={'hidden'}>
+        {/* Hide this App Icon in Mobile width */}
+        {isSmallerThanMobile && (
+          <>
+            <Image mx={'auto'} boxSize={20} src="./app-store.png" />
+          </>
+        )}
+        <Heading
+          my={5}
+          textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
+          color={useColorModeValue('gray.600', 'white')}
+        >
+          {' '}
+          <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
+            Work
+          </Text>{' '}
           Experience
+        </Heading>
+        {/* Head */}
+        <Text
+          mx={'auto'}
+          width={{ base: 'left', sm: 'none', lg: '50%' }}
+          color={useColorModeValue('gray.600', 'white')}
+          mb={5}
+          textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
+        >
+          Here are a list of some of the apps I've built using different coding
+          languages. Click the{' '}
+          button to view the website/app live. To view the repository of my
+          projects click the{' '}
+          <Link
+            color={linkColor[colorMode]}
+            colorScheme={'teal'}
+            fontWeight={600}
+            fontSize={'14px'}
+            bg={bgColor[colorMode]}
+            p={1}
+            marginTop={3}
+            alignSelf={'flex-start'}
+            rounded={'md'}
+            href={'https://github.com/tonybonki'}
+          >
+            My Github Repo <ExternalLinkIcon mx="2px" />
+          </Link>{' '}
+          below to view the projects on my github repository.
         </Text>
-      </Heading>
+        <Box textAlign={{ base: 'left', sm: 'none', lg: 'center' }}>
+          <Link
+            _hover={{
+              textDecoration: 'none',
+            }}
+            isExternal
+            href="https://github.com/tonybonki"
+          >
+            {' '}
+          </Link>
+          {/* Add Button or Component Here */}
+        </Box>
+      </Box>
       <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
         {/* Map the Job Objects as Wrap Items */}
