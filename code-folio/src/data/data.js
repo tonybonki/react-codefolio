@@ -34,10 +34,10 @@ export const jobs = [
     title: 'ICT Clerical Officer',
     company: 'The State Laboratory',
     timeWorked: '1 Year',
-    website:'https://www.statelab.ie/',
+    website: 'https://www.statelab.ie/',
     description:
-      'I provided ICT support to all employees around the workplace. I performed daily checks, updated the website when neccesary, monitored the internet firewall/email filtering, bbuilt out a number of laptops imaging custom windows OS for employees that use the one-device setup.',
+      'I provided ICT support to all employees within the workplace. My responsibilities included performing daily checks, updating the website as necessary, monitoring the internet firewall and email filtering, and building out custom Windows OS images for laptops used by employees who prefer a one-device setup.',
     jobImageName: 'stateLaboratory.jpg',
-    skills: ['Web Development', 'Networking', 'VM', 'Firewall'],
+    skills: ['Web Engineering', 'Networking', 'VM', 'Firewall'],
   },
 ];

@@ -15,6 +15,7 @@ import {
 export const NAV_ITEMS = [
   {
     label: 'My Skills',
+    href: '#projects',
     children: [
       {
         icon: <AiOutlineFundProjectionScreen size={17} />,
@@ -32,12 +33,13 @@ export const NAV_ITEMS = [
   },
   {
     label: 'Work Experience',
+    href: '#work-experience',
     children: [
       {
         icon: <AiOutlineWallet />,
         label: 'Past Jobs',
         subLabel: 'Places I have worked in.',
-        href: '#',
+        href: '#work-experience',
       },
       {
         icon: <AiOutlineHeart />,

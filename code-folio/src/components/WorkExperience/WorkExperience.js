@@ -34,6 +34,7 @@ export const JobSkills: React.FC<IJobSkills> = props => {
           <Tag
             fontSize={{ base: '10px', sm: 'none', lg: '13' }}
             variant="solid"
+            p={1.5}
             colorScheme="teal"
             key={tag}
           >
@@ -45,12 +46,12 @@ export const JobSkills: React.FC<IJobSkills> = props => {
   );
 };
 
-
 const ExperienceList = () => {
   const { colorMode } = useColorMode();
   const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
   return (
     <Container
+      id="work-experience"
       color={useColorModeValue('gray.600', 'white')}
       maxW={'7xl'}
       p="12"
@@ -59,7 +60,7 @@ const ExperienceList = () => {
         {/* Hide this App Icon in Mobile width */}
         {isSmallerThanMobile && (
           <>
-            <Image mx={'auto'} boxSize={20} src="./app-store.png" />
+            <Image mx={'auto'} boxSize={20} src="./work-exp.png" />
           </>
         )}
         <Heading
@@ -74,33 +75,6 @@ const ExperienceList = () => {
           Experience
         </Heading>
         {/* Head */}
-        <Text
-          mx={'auto'}
-          width={{ base: 'left', sm: 'none', lg: '50%' }}
-          color={useColorModeValue('gray.600', 'white')}
-          mb={5}
-          textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
-        >
-          Here are a list of some of the apps I've built using different coding
-          languages. Click the{' '}
-          button to view the website/app live. To view the repository of my
-          projects click the{' '}
-          <Link
-            color={linkColor[colorMode]}
-            colorScheme={'teal'}
-            fontWeight={600}
-            fontSize={'14px'}
-            bg={bgColor[colorMode]}
-            p={1}
-            marginTop={3}
-            alignSelf={'flex-start'}
-            rounded={'md'}
-            href={'https://github.com/tonybonki'}
-          >
-            My Github Repo <ExternalLinkIcon mx="2px" />
-          </Link>{' '}
-          below to view the projects on my github repository.
-        </Text>
         <Box textAlign={{ base: 'left', sm: 'none', lg: 'center' }}>
           <Link
             _hover={{
@@ -180,32 +154,56 @@ const ExperienceList = () => {
         ))}
       </Wrap>
 
-      <VStack paddingTop="40px" spacing="2" alignItems="flex-start">
-        <Heading as="h2">Why Hire Me?</Heading>
-        <Text as="p" fontSize="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          condimentum quam arcu, eu tempus tortor molestie at. Vestibulum
-          pretium condimentum dignissim. Vestibulum ultrices vitae nisi sed
-          imperdiet. Mauris quis erat consequat, commodo massa quis, feugiat
-          sapien. Suspendisse placerat vulputate posuere. Curabitur neque
-          tortor, mattis nec lacus non, placerat congue elit.
-        </Text>
-        <Text as="p" fontSize="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          condimentum quam arcu, eu tempus tortor molestie at. Vestibulum
-          pretium condimentum dignissim. Vestibulum ultrices vitae nisi sed
-          imperdiet. Mauris quis erat consequat, commodo massa quis, feugiat
-          sapien. Suspendisse placerat vulputate posuere. Curabitur neque
-          tortor, mattis nec lacus non, placerat congue elit.
-        </Text>
-        <Text as="p" fontSize="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          condimentum quam arcu, eu tempus tortor molestie at. Vestibulum
-          pretium condimentum dignissim. Vestibulum ultrices vitae nisi sed
-          imperdiet. Mauris quis erat consequat, commodo massa quis, feugiat
-          sapien. Suspendisse placerat vulputate posuere. Curabitur neque
-          tortor, mattis nec lacus non, placerat congue elit.
-        </Text>
+      <VStack paddingTop="40px" spacing="6" alignItems="flex-start">
+        <Heading
+          my={5}
+          textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
+          color={useColorModeValue('gray.600', 'white')}
+        >
+          {' '}
+          <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
+            Why
+          </Text>{' '}
+          Hire Me?
+        </Heading>
+        <Divider />
+        <Box>
+          <Heading marginBottom={3} fontWeight={500} fontSize={'20px'}>
+            Technical expertise and creative problem-solving skills
+          </Heading>
+          <Text as="p">
+            As a website developer, I bring a unique combination of technical
+            expertise and creative problem-solving skills to the table. I have a
+            deep understanding of web development technologies such as HTML,
+            CSS, JavaScript, and various CMS platforms. Additionally, I am
+            passionate about staying up-to-date with the latest trends and best
+            practices in web development.
+          </Text>
+        </Box>
+
+        <Box>
+          <Heading marginBottom={3} fontWeight={500} fontSize={'20px'}>
+            Visually stunning and user-friendly website development
+          </Heading>
+          <Text as="p">
+            I am confident in my ability to create visually stunning and
+            user-friendly websites that meet the needs of clients and exceed
+            their expectations. I am skilled at working collaboratively with
+            designers, project managers, and clients to bring their vision to
+            life while ensuring the functionality and usability of the site.
+          </Text>
+        </Box>
+        <Box>
+          <Heading marginBottom={3} fontWeight={500} fontSize={'20px'}>
+            Fast learner and creative thinker committed to high-quality work
+          </Heading>
+          <Text as="p">
+            Moreover, I am a fast learner and a creative thinker. I have the
+            ability to troubleshoot and resolve issues quickly, ensuring that
+            the site is always running smoothly. I am also committed to
+            delivering high-quality work on time and within budget.
+          </Text>
+        </Box>
       </VStack>
     </Container>
   );
