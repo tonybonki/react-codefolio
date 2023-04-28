@@ -20,8 +20,6 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-import { ExternalLinkIcon } from '@chakra-ui/icons';
-
 import { textColor, linkColor, bgColor } from '../theme';
 
 export const JobSkills: React.FC<IJobSkills> = props => {
@@ -32,7 +30,7 @@ export const JobSkills: React.FC<IJobSkills> = props => {
       {props.tags.map(tag => {
         return (
           <Tag
-            fontSize={{ base: '10px', sm: 'none', lg: '13' }}
+            fontSize={{ base: '12px', sm: 'none', lg: '13px' }}
             variant="solid"
             p={1.5}
             colorScheme="teal"
@@ -53,8 +51,7 @@ const ExperienceList = () => {
     <Container
       id="work-experience"
       color={useColorModeValue('gray.600', 'white')}
-      maxW={'7xl'}
-      p="12"
+      maxW={{ lg: '7xl' }}
     >
       <Box position={'relative'} overflow={'hidden'}>
         {/* Hide this App Icon in Mobile width */}
@@ -154,9 +151,9 @@ const ExperienceList = () => {
         ))}
       </Wrap>
 
-      <VStack paddingTop="40px" spacing="6" alignItems="flex-start">
+      <VStack paddingTop="40px" spacing="7" alignItems="flex-start">
         <Heading
-          my={5}
+          marginTop={5}
           textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
           color={useColorModeValue('gray.600', 'white')}
         >
@@ -168,8 +165,11 @@ const ExperienceList = () => {
         </Heading>
         <Divider />
         <Box>
-          <Heading marginBottom={3} fontWeight={500} fontSize={'20px'}>
-            Technical expertise and creative problem-solving skills
+          <Heading marginBottom={3} fontWeight={500} fontSize={'25px'}>
+            <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
+              Technical expertise
+            </Text>{' '}
+            and creative problem-solving skills
           </Heading>
           <Text as="p">
             As a website developer, I bring a unique combination of technical
@@ -182,8 +182,12 @@ const ExperienceList = () => {
         </Box>
 
         <Box>
-          <Heading marginBottom={3} fontWeight={500} fontSize={'20px'}>
-            Visually stunning and user-friendly website development
+          <Heading marginBottom={3} fontWeight={500} fontSize={'25px'}>
+            Visually stunning and{' '}
+            <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
+              user-friendly
+            </Text>{' '}
+            website development
           </Heading>
           <Text as="p">
             I am confident in my ability to create visually stunning and
@@ -194,8 +198,12 @@ const ExperienceList = () => {
           </Text>
         </Box>
         <Box>
-          <Heading marginBottom={3} fontWeight={500} fontSize={'20px'}>
-            Fast learner and creative thinker committed to high-quality work
+          <Heading marginBottom={3} fontWeight={500} fontSize={'25px'}>
+            Creative thinker and{' '}
+            <Text fontWeight={500} color={useColorModeValue('teal.500', 'white')} as={'span'}>
+              fast learner
+            </Text>{' '}
+            committed to high-quality work
           </Heading>
           <Text as="p">
             Moreover, I am a fast learner and a creative thinker. I have the
