@@ -14,7 +14,7 @@ export default function MainHero() {
   return (
     <Container mb={10} mt={{ base: '20px', lg: '100px' }} maxW={'7xl'}>
       <Stack direction={{ base: 'column', md: 'row' }}>
-        <Stack  flex={1} spacing={{ base: 5, md: 5 }}>
+        <Stack flex={1} spacing={{ base: 5, md: 5 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
@@ -46,12 +46,15 @@ export default function MainHero() {
           <Text
             color={useColorModeValue('gray.600', 'white')}
             width={{ base: '100%', lg: '70%' }}
-            
             fontSize={{ base: '17px', sm: '17px', lg: '19px' }}
           >
-            Hi, my name is Tony Bonki. I am a student of the University of DCU
-            in Ireland studying Computing for Business. I created this website
-            to showcase the projects I have done and show off all of my skills.
+            Greetings, my name is Tony Bonki, and I am a dedicated student
+            currently pursuing a degree in Computing for Business at the
+            prestigious University of DCU, situated in Ireland. It is my
+            pleasure to present to you this website that I have developed, which
+            aims to showcase my completed projects and a diverse range of
+            skills. Thank you for visiting my website, which was crafted
+            entirely by me.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
