@@ -164,54 +164,6 @@ const ExperienceList = () => {
           Hire Me?
         </Heading>
         <Divider />
-        <Box>
-          <Heading marginBottom={3} fontWeight={500} fontSize={'25px'}>
-            <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
-              Technical expertise
-            </Text>{' '}
-            and creative problem-solving skills
-          </Heading>
-          <Text as="p">
-            As a website developer, I bring a unique combination of technical
-            expertise and creative problem-solving skills to the table. I have a
-            deep understanding of web development technologies such as HTML,
-            CSS, JavaScript, and various CMS platforms. Additionally, I am
-            passionate about staying up-to-date with the latest trends and best
-            practices in web development.
-          </Text>
-        </Box>
-
-        <Box>
-          <Heading marginBottom={3} fontWeight={500} fontSize={'25px'}>
-            Visually stunning and{' '}
-            <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
-              user-friendly
-            </Text>{' '}
-            website development
-          </Heading>
-          <Text as="p">
-            I am confident in my ability to create visually stunning and
-            user-friendly websites that meet the needs of clients and exceed
-            their expectations. I am skilled at working collaboratively with
-            designers, project managers, and clients to bring their vision to
-            life while ensuring the functionality and usability of the site.
-          </Text>
-        </Box>
-        <Box>
-          <Heading marginBottom={3} fontWeight={500} fontSize={'25px'}>
-            Creative thinker and{' '}
-            <Text fontWeight={500} color={useColorModeValue('teal.500', 'white')} as={'span'}>
-              fast learner
-            </Text>{' '}
-            committed to high-quality work
-          </Heading>
-          <Text as="p">
-            Moreover, I am a fast learner and a creative thinker. I have the
-            ability to troubleshoot and resolve issues quickly, ensuring that
-            the site is always running smoothly. I am also committed to
-            delivering high-quality work on time and within budget.
-          </Text>
-        </Box>
       </VStack>
     </Container>
   );
