@@ -20,11 +20,9 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-import { textColor, linkColor, bgColor } from '../theme';
+import { linkColor } from '../theme';
 
 export const JobSkills: React.FC<IJobSkills> = props => {
-  const [isLargerThanMobile] = useMediaQuery('(max-width: 680px)');
-  const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map(tag => {
