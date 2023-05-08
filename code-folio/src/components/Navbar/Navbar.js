@@ -1,5 +1,4 @@
 
-
 import {
   Box,
   Flex,
@@ -35,7 +34,6 @@ import { NAV_ITEMS } from './Navlinks';
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
   const [isLargerThanMobile] = useMediaQuery('(min-width: 680px)');
-
 
   return (
     <Box>
@@ -80,21 +78,21 @@ export default function WithSubnavigation() {
           alignItems={'center'}
           spacing={4}
         >
-            <Flex alignItems={'center'}>
-              <ColorModeToggle />
-              {isLargerThanMobile && (
-                <>
-                  <Text m={2} fontSize={12} fontWeight={800}>
-                    /
-                  </Text>
-                  <Stack display={'flex'} spacing={1} direction={'row'}>
-                    <Kbd borderRadius={2}>shift</Kbd>
-                    {' + '}
-                    <Kbd borderRadius={2}>N</Kbd>
-                  </Stack>
-                </>
-              )}
-            </Flex>
+          <Flex alignItems={'center'}>
+            <ColorModeToggle />
+            {isLargerThanMobile && (
+              <>
+                <Text m={2} fontSize={12} fontWeight={800}>
+                  /
+                </Text>
+                <Stack display={'flex'} spacing={1} direction={'row'}>
+                  <Kbd borderRadius={2}>shift</Kbd>
+                  {' + '}
+                  <Kbd borderRadius={2}>N</Kbd>
+                </Stack>
+              </>
+            )}
+          </Flex>
         </Stack>
       </Flex>
 
@@ -143,7 +141,7 @@ const DesktopNav = () => {
               >
                 <Stack>
                   {navItem.children.map(child => (
-                    <DesktopSubNav key={child.label} {...child} />
+                      <DesktopSubNav key={child.label} {...child} />
                   ))}
                 </Stack>
               </PopoverContent>
@@ -155,13 +153,14 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel, icon }: NavItem) => {
+const DesktopSubNav = ({ label, href, subLabel, icon, download }: NavItem) => {
   return (
     <Link
       href={href}
       role={'group'}
       display={'block'}
       p={1}
+      {...(download ? { download: '' } : {})}
       rounded={'base'}
       _hover={{ bg: useColorModeValue('teal.50', 'gray.900') }}
     >
@@ -226,6 +225,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           textDecoration: 'none',
         }}
       >
+        
         <Text
           fontWeight={600}
           color={useColorModeValue('gray.600', 'gray.200')}

@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Icon, Text, Stack, Flex } from '@chakra-ui/react';
+import { Box, SimpleGrid, Text, Stack} from '@chakra-ui/react';
 
 const Skill = ({ title, text }: SkillProps) => {
   return (

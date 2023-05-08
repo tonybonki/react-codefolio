@@ -1,3 +1,5 @@
+// Import CV PDF
+import CV from './CV.pdf'
 // Import React Icons
 
 import {
@@ -50,8 +52,9 @@ export const NAV_ITEMS = [
       {
         icon: <AiOutlineLinkedin />,
         label: 'My Resume',
-        subLabel: ' My Curriculum Vitae',
-        href: '#',
+        download: 'True',
+        subLabel: 'Download My Curriculum Vitae',
+        href: CV,
       },
     ],
   },
