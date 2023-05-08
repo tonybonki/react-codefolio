@@ -151,20 +151,7 @@ const ExperienceList = () => {
         ))}
       </Wrap>
 
-      <VStack paddingTop="40px" spacing="7" alignItems="flex-start">
-        <Heading
-          marginTop={5}
-          textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
-          color={useColorModeValue('gray.600', 'white')}
-        >
-          {' '}
-          <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
-            Why
-          </Text>{' '}
-          Hire Me?
-        </Heading>
-        <Divider />
-      </VStack>
+
     </Container>
   );
 };

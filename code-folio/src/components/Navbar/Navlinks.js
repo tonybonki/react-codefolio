@@ -1,6 +1,6 @@
 // Import CV PDF
 import CV from './CV.pdf'
-// Import React Icons
+
 
 import {
   AiOutlineFundProjectionScreen,
