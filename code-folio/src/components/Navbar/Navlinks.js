@@ -83,6 +83,6 @@ export const NAV_ITEMS = [
   },
   {
     label: 'Contact Me',
-    href: '#',
+    href: 'mailto:tony.bonki2@mail.dcu.ie?subject=Replace this with your Subject&body=Email%20Body',
   },
 ];
