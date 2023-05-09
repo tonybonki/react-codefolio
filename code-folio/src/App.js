@@ -5,6 +5,8 @@ import Navbar from './components/Navbar/Navbar';
 import SplitWithImage from './components/Projects/Projects';
 import ExperienceList from './components/WorkExperience/WorkExperience';
 import Skillset from './components/WorkExperience/Skills'; 
+import SmallCentered from './components/Footer/Footer'
+
 import {
   ChakraProvider,
 } from '@chakra-ui/react';
@@ -19,6 +21,7 @@ function App() {
       <SplitWithImage />
       <ExperienceList />
       <Skillset />
+      <SmallCentered />
     </ChakraProvider>
   );
 }
