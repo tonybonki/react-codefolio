@@ -219,8 +219,6 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
-        as={Link}
-        href={href ?? '#'}
         justify={'space-between'}
         align={'center'}
         _hover={{
@@ -228,6 +226,8 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         }}
       >
         <Text
+          as={Link}
+          href={href ?? '#'}
           fontWeight={600}
           color={useColorModeValue('gray.600', 'gray.200')}
         >

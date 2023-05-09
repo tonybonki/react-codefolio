@@ -63,7 +63,7 @@ const SocialButton = ({
   );
 };
 
-export default function SmallCentered() {
+export default function Footer() {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
