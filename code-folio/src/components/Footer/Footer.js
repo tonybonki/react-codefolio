@@ -8,7 +8,6 @@ import {
   Image,
   useColorModeValue,
   VisuallyHidden,
-  Flex,
 } from '@chakra-ui/react';
 
 import { AiOutlineMail } from 'react-icons/ai';
@@ -38,7 +37,6 @@ const SocialButton = ({
       cursor={'pointer'}
       as={'a'}
       href={href}
-      display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
       transition={'background 0.3s ease'}
