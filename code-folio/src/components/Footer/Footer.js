@@ -2,7 +2,6 @@ import {
   Box,
   chakra,
   Container,
-  Link,
   Stack,
   Text,
   Divider,
@@ -11,9 +10,6 @@ import {
   VisuallyHidden,
 } from '@chakra-ui/react';
 
-import { AiOutlineMail } from 'react-icons/ai';
-
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { ReactNode } from 'react';
 
 const Logo = (props: any) => {
