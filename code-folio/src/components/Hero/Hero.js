@@ -36,9 +36,8 @@ export default function MainHero() {
             fontSize={{ base: '1l', sm: '2l', lg: 'xl' }}
           >
             <Text as={'span'} position={'relative'}>
-              Change this to somthing useful this is just dummy text.
-            </Text>
-            <br />
+              A portfolio entirely coded by me welcome to my 
+            </Text>{' '}
             <Text as={'span'} color={useColorModeValue('teal.500', 'teal.300')}>
               Code-folio!
             </Text>

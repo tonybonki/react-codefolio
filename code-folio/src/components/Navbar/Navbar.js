@@ -218,7 +218,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
-        py={2}
+        py={1}
+        fontWeight={400}
+        fontSize={'17px'}
         justify={'space-between'}
         align={'center'}
         _hover={{
