@@ -6,6 +6,7 @@ import {
   Text,
   Divider,
   Image,
+  HStack,
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react';
@@ -64,7 +65,10 @@ export default function Footer() {
       >
         <Logo />
         <Divider />
-        <Text>© 2023 Codefolio by Bonki</Text>
+        <HStack spacing={2}>
+          <Image h={5} src={'./favicon.ico'}></Image>
+          <Text pt={1}> 2023 Codefolio by Bonki</Text>
+        </HStack>
       </Container>
     </Box>
   );
