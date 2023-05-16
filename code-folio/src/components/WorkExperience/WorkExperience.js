@@ -19,11 +19,6 @@ import {
   useColorModeValue,
   Container,
   useColorMode,
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel
 } from '@chakra-ui/react';
 
 import { linkColor } from '../theme';
@@ -89,25 +84,8 @@ const ExperienceList = () => {
         </Box>
       </Box>
       <Divider marginTop="5" />
-      {/* Tab componet that filters projects bsaed on the programming language */}
-      <Tabs variant='enclosed'>
-  <TabList>
-    <Tab>
-      <Image mx={2} borderRadius={5} h={7} src='/icons/React.png'></Image>
-      <Text color={useColorModeValue('#51adc6.300', 'white')} fontSize={'16px'} fontWeight={500}>React</Text> 
-    </Tab>
-    <Tab>Two</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>one!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>two!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
-      {/* Projects */}
+      
+      {/* Work Experience */}
       <Wrap spacing="30px" marginTop="5">
         {/* Map the Job Objects as Wrap Items */}
         {jobs.map(job => (
@@ -172,8 +150,6 @@ const ExperienceList = () => {
           </WrapItem>
         ))}
       </Wrap>
-
-
     </Container>
   );
 };
