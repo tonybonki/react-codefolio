@@ -32,7 +32,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 // Import Project Data
 import { projects } from '../../data/data';
 
-const Skill = ({ text, image }: SkillProps) => {
+const Skill = ({ text, image }) => {
   return (
     <Stack direction={'row'} align={'center'}>
       <Flex w={8} h={8} align={'center'} justify={'center'}>
@@ -195,11 +195,13 @@ export default function SplitWithImage() {
                   }
                 />
               ))}
-              <Link
+              <Box mt={4}>
+                <Link
                 color={linkColor[colorMode]}
                 colorScheme={'teal'}
                 fontWeight={600}
                 fontSize={'14px'}
+                marginRight={'10px'}
                 bg={bgColor[colorMode]}
                 p={1}
                 marginTop={3}
@@ -211,6 +213,24 @@ export default function SplitWithImage() {
               >
                 Live Preview <ExternalLinkIcon mx="2px" />
               </Link>
+              <Link
+              color={linkColor[colorMode]}
+              colorScheme={'teal'}
+              fontWeight={600}
+              fontSize={'14px'}
+              bg={bgColor[colorMode]}
+              p={1}
+              isExternal
+              marginTop={3}
+              alignSelf={'flex-start'}
+              rounded={'md'}
+              href={project.githubLink}
+            >
+              Github Repository <ExternalLinkIcon mx="2px" />
+            </Link>
+              </Box>
+              
+
             </Stack>
             {isLargerThanMobile && (
               <>
