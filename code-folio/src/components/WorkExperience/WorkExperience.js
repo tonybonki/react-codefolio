@@ -93,8 +93,8 @@ const ExperienceList = () => {
       <Tabs variant='enclosed'>
   <TabList>
     <Tab>
-      <Image mx={2} h={5} src='/icons/React.png'></Image>
-      <Text color={useColorModeValue('teal.500', 'white')} fontSize={'16px'} fontWeight={500}>React</Text> 
+      <Image mx={2} borderRadius={5} h={7} src='/icons/React.png'></Image>
+      <Text color={useColorModeValue('#51adc6.300', 'white')} fontSize={'16px'} fontWeight={500}>React</Text> 
     </Tab>
     <Tab>Two</Tab>
   </TabList>
