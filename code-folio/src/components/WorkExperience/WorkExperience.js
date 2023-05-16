@@ -19,12 +19,16 @@ import {
   useColorModeValue,
   Container,
   useColorMode,
-  VStack,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel
 } from '@chakra-ui/react';
 
 import { linkColor } from '../theme';
 
-export const JobSkills: React.FC<IJobSkills> = props => {
+export const JobSkills = props => {
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map(tag => {
@@ -82,10 +86,28 @@ const ExperienceList = () => {
           >
             {' '}
           </Link>
-          {/* Add Button or Component Here */}
         </Box>
       </Box>
       <Divider marginTop="5" />
+      {/* Tab componet that filters projects bsaed on the programming language */}
+      <Tabs variant='enclosed'>
+  <TabList>
+    <Tab>
+      <Image mx={2} h={5} src='/icons/React.png'></Image>
+      <Text color={useColorModeValue('teal.500', 'white')} fontSize={'16px'} fontWeight={500}>React</Text> 
+    </Tab>
+    <Tab>Two</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <p>one!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>two!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+      {/* Projects */}
       <Wrap spacing="30px" marginTop="5">
         {/* Map the Job Objects as Wrap Items */}
         {jobs.map(job => (
