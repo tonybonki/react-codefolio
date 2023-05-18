@@ -36,13 +36,13 @@ export default function MainHero() {
             fontSize={{ base: '1l', sm: '2l', lg: 'xl' }}
           >
             <Text as={'span'} position={'relative'}>
-              A portfolio entirely coded by me welcome to my 
+              A portfolio entirely coded by me welcome to my
             </Text>{' '}
             <Text as={'span'} color={useColorModeValue('teal.500', 'teal.300')}>
               Code-folio!
             </Text>
           </Heading>
-          
+
           <Text
             color={useColorModeValue('gray.600', 'white')}
             width={{ base: '100%', lg: '70%' }}
@@ -63,12 +63,14 @@ export default function MainHero() {
             <Button size="sm" colorScheme="teal">
               Projects
             </Button>
-            <Button size="sm" colorScheme="teal">
-            <Link textDecoration={'none !important'} href='mailto:tony.bonki2@mail.dcu.ie?subject=Replace this with your Subject&body=Email%20Body'>
-            Contact Me
-              </Link>
-              
-            </Button>
+            <Link
+              textDecoration={'none !important'}
+              href="mailto:tony.bonki2@mail.dcu.ie?subject=Replace this with your Subject&body=Email%20Body"
+            >
+              <Button size="sm" colorScheme="teal">
+                Contact Me
+              </Button>
+            </Link>
           </Stack>
         </Stack>
         {/* The Image of Myself */}
