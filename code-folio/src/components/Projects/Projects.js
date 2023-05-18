@@ -92,7 +92,7 @@ export default function SplitWithImage() {
           {/* Hide this App Icon in Mobile width */}
           {isSmallerThanMobile && (
             <>
-              <Image mx={'auto'} boxSize={20} src="./app-store.png" />
+              <Image mx={'auto'} boxSize={89} src="./icons/project.png" />
             </>
           )}
           <Heading
