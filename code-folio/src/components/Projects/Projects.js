@@ -57,11 +57,21 @@ export default function SplitWithImage() {
   const { colorMode } = useColorMode();
   const [isLargerThanMobile] = useMediaQuery('(max-width: 680px)');
   const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
+
+  // Filter the mapped projects based on the library property in the objects
   const [filter, setFilter] = useState('');
+  
 
   const filteredProjects = projects.filter(project =>
     project.library.toLowerCase().includes(filter.toLowerCase())
   );
+
+  // Use State code to change the opacity of the tab that is selected
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabClick = index => {
+    setActiveTab(index);
+  };
 
   return (
     <Container
@@ -174,23 +184,47 @@ export default function SplitWithImage() {
         </Box>
       </Flex>
       {/* Tab componet that filters projects bsaed on the programming language */}
-      <Tabs my={10} variant="enclosed">
+      <Heading fontSize={13}>Filter by Library</Heading>
+      <Tabs
+        isLazy
+        index={activeTab}
+        onChange={handleTabClick}
+        my={10}
+        variant="enclosed"
+      >
         <TabList>
           <Tooltip placement="top" label="All" aria-label="A tooltip">
-            <Tab onClick={() => setFilter('')}>
+            <Tab
+              opacity={activeTab === 0 ? 1 : 0.5}
+              onClick={() => setFilter('')}
+            >
               <VStack>
                 <Image h={5} src="/icons/menu.png"></Image>
-                {/* TBD have below feature or not */}
-                {/* <Text color={useColorModeValue('gray.600', 'white')}  fontWeight={500}>{' '}</Text>  */}
               </VStack>
             </Tab>
           </Tooltip>
           <Tooltip placement="top" label="React" aria-label="A tooltip">
-            <Tab onClick={() => setFilter('React')}>
+            <Tab
+              opacity={activeTab === 1 ? 1 : 0.5}
+              onClick={() => setFilter('React')}
+            >
               <VStack>
                 <Image h={5} src="/icons/React.png"></Image>
-                {/* TBD have below feature or not */}
-                {/* <Text color={useColorModeValue('gray.600', 'white')}  fontWeight={500}>{' '}</Text>  */}
+              </VStack>
+            </Tab>
+          </Tooltip>
+          <Tooltip
+            placement="top"
+            label="Coming Soon..."
+            aria-label="A tooltip"
+          >
+            <Tab
+              opacity={activeTab === 2 ? 1 : 0.5}
+              isDisabled
+              onClick={() => setFilter('Vue')}
+            >
+              <VStack>
+                <Image h={5} src="/icons/Vue.png"></Image>
               </VStack>
             </Tab>
           </Tooltip>

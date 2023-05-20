@@ -51,7 +51,7 @@ const ExperienceList = () => {
     <Container
       id="work-experience"
       color={useColorModeValue('gray.600', 'white')}
-      maxW={{ lg: '7xl' }}
+      maxW={{ lg: '6xl' }}
     >
       <Box position={'relative'} overflow={'hidden'}>
         {/* Hide this App Icon in Mobile width */}

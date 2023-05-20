@@ -9,6 +9,7 @@ import {
   useColorModeValue,
   Icon,
   Divider,
+  Container,
 } from '@chakra-ui/react';
 import { GoFileCode, GoPencil, GoMortarBoard } from 'react-icons/go';
 const Skill = ({ title, text, icon }: SkillProps) => {
@@ -34,7 +35,7 @@ const Skill = ({ title, text, icon }: SkillProps) => {
 
 export default function Skillset() {
   return (
-    <>
+    <Container maxW={'6xl'}>
       <VStack p={4} paddingTop="40px" spacing="7" alignItems="flex-start">
         <Heading
           marginTop={5}
@@ -74,6 +75,6 @@ export default function Skillset() {
           />
         </SimpleGrid>
       </Box>
-    </>
+    </Container>
   );
 }
