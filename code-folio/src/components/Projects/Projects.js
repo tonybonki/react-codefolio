@@ -39,7 +39,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 // Import Project Data
 import { projects } from '../../data/data';
 
-// Import use State from React 
+// Import use State from React
 import { useState } from 'react';
 
 const Skill = ({ text, image }) => {
@@ -60,7 +60,7 @@ export default function SplitWithImage() {
   const [filter, setFilter] = useState('');
 
   const filteredProjects = projects.filter(project =>
-    project.frameWork.toLowerCase().includes(filter.toLowerCase())
+    project.library.toLowerCase().includes(filter.toLowerCase())
   );
 
   return (
@@ -174,27 +174,27 @@ export default function SplitWithImage() {
         </Box>
       </Flex>
       {/* Tab componet that filters projects bsaed on the programming language */}
-      <Tabs variant="enclosed">
+      <Tabs my={10} variant="enclosed">
         <TabList>
-          <Tab onClick={() => setFilter('')}>
-            <VStack>
-              <Image h={5} src="/icons/menu.png"></Image>
-              {/* TBD have below feature or not */}
-              {/* <Text color={useColorModeValue('gray.600', 'white')}  fontWeight={500}>{' '}</Text>  */}
-            </VStack>
-          </Tab>
-          <Tab onClick={() => setFilter('React')}>
-            <VStack>
-              <Image h={5} src="/icons/React.png"></Image>
-              {/* TBD have below feature or not */}
-              {/* <Text color={useColorModeValue('gray.600', 'white')}  fontWeight={500}>{' '}</Text>  */}
-            </VStack>
-          </Tab>
+          <Tooltip placement="top" label="All" aria-label="A tooltip">
+            <Tab onClick={() => setFilter('')}>
+              <VStack>
+                <Image h={5} src="/icons/menu.png"></Image>
+                {/* TBD have below feature or not */}
+                {/* <Text color={useColorModeValue('gray.600', 'white')}  fontWeight={500}>{' '}</Text>  */}
+              </VStack>
+            </Tab>
+          </Tooltip>
+          <Tooltip placement="top" label="React" aria-label="A tooltip">
+            <Tab onClick={() => setFilter('React')}>
+              <VStack>
+                <Image h={5} src="/icons/React.png"></Image>
+                {/* TBD have below feature or not */}
+                {/* <Text color={useColorModeValue('gray.600', 'white')}  fontWeight={500}>{' '}</Text>  */}
+              </VStack>
+            </Tab>
+          </Tooltip>
         </TabList>
-        <TabPanels>
-          <TabPanel>{/* <p>one!</p> */}</TabPanel>
-          <TabPanel>{/* <p>two!</p> */}</TabPanel>
-        </TabPanels>
       </Tabs>
       {/* Map Projects */}
       {filteredProjects.map((project, index) => (

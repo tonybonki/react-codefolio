@@ -19,11 +19,12 @@ import {
   useColorModeValue,
   Container,
   useColorMode,
+  VStack,
 } from '@chakra-ui/react';
 
 import { linkColor } from '../theme';
 
-export const JobSkills = props => {
+export const JobSkills: React.FC<IJobSkills> = props => {
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map(tag => {
@@ -81,11 +82,10 @@ const ExperienceList = () => {
           >
             {' '}
           </Link>
+          {/* Add Button or Component Here */}
         </Box>
       </Box>
       <Divider marginTop="5" />
-      
-      {/* Work Experience */}
       <Wrap spacing="30px" marginTop="5">
         {/* Map the Job Objects as Wrap Items */}
         {jobs.map(job => (
@@ -150,6 +150,8 @@ const ExperienceList = () => {
           </WrapItem>
         ))}
       </Wrap>
+
+
     </Container>
   );
 };
