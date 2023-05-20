@@ -190,6 +190,7 @@ export default function SplitWithImage() {
         index={activeTab}
         onChange={handleTabClick}
         my={10}
+        // isFitted ADD THIS?!?!
         variant="enclosed"
       >
         <TabList>
@@ -225,6 +226,21 @@ export default function SplitWithImage() {
             >
               <VStack>
                 <Image h={5} src="/icons/Vue.png"></Image>
+              </VStack>
+            </Tab>
+          </Tooltip>
+          <Tooltip
+            placement="top"
+            label="Coming Soon..."
+            aria-label="A tooltip"
+          >
+            <Tab
+              opacity={activeTab === 2 ? 1 : 0.5}
+              isDisabled
+              onClick={() => setFilter('Angular')}
+            >
+              <VStack>
+                <Image h={5} src="/icons/Angular.png"></Image>
               </VStack>
             </Tab>
           </Tooltip>
