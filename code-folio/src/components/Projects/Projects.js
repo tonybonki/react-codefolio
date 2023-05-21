@@ -17,11 +17,9 @@ import {
   Button,
   Tabs,
   TabList,
-  TabPanels,
   Tab,
   Tooltip,
   VStack,
-  TabPanel,
 } from '@chakra-ui/react';
 
 // Import Color themes
@@ -187,9 +185,10 @@ export default function SplitWithImage() {
         mb={5}
         color={useColorModeValue('teal.500', 'white')}
         textAlign={'center'}
-        fontSize={13}
+        fontSize={15}
       >
-        Library/Framework
+        Library / Framework
+        
       </Heading>
       <Tabs
         isLazy
