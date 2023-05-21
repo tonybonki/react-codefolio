@@ -19,7 +19,6 @@ import {
   useColorModeValue,
   Container,
   useColorMode,
-  VStack,
 } from '@chakra-ui/react';
 
 import { linkColor } from '../theme';

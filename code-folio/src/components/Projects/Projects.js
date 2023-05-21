@@ -182,7 +182,7 @@ export default function SplitWithImage() {
       </Flex>
       {/* Tab componet that filters projects bsaed on the programming language */}
       <Heading
-        mb={5}
+        my={7}
         color={useColorModeValue('teal.500', 'white')}
         textAlign={'center'}
         fontSize={15}
