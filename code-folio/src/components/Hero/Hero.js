@@ -60,7 +60,7 @@ export default function MainHero() {
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}
           >
-            <Button size="sm" colorScheme="teal">
+            <Button href='#projects' size="sm" colorScheme="teal">
               Projects
             </Button>
             <Link

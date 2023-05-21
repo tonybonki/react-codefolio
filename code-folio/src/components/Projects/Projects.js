@@ -60,7 +60,6 @@ export default function SplitWithImage() {
 
   // Filter the mapped projects based on the library property in the objects
   const [filter, setFilter] = useState('');
-  
 
   const filteredProjects = projects.filter(project =>
     project.library.toLowerCase().includes(filter.toLowerCase())
@@ -184,14 +183,23 @@ export default function SplitWithImage() {
         </Box>
       </Flex>
       {/* Tab componet that filters projects bsaed on the programming language */}
-      <Heading fontSize={13}>Filter by Library</Heading>
+      <Heading
+        mb={5}
+        color={useColorModeValue('teal.500', 'white')}
+        textAlign={'center'}
+        fontSize={13}
+      >
+        Library/Framework
+      </Heading>
       <Tabs
         isLazy
+        colorScheme={'teal'}
         index={activeTab}
+        textAlign={'center'}
+        align="center"
+        variant={'enclosed-colored'}
         onChange={handleTabClick}
-        my={10}
-        // isFitted ADD THIS?!?!
-        variant="enclosed"
+        mb={10}
       >
         <TabList>
           <Tooltip placement="top" label="All" aria-label="A tooltip">
