@@ -23,7 +23,7 @@ import {
 
 import { linkColor } from '../theme';
 
-export const JobSkills: React.FC<IJobSkills> = props => {
+export const JobSkills = props => {
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map(tag => {
