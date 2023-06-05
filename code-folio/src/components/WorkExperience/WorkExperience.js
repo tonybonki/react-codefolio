@@ -19,12 +19,11 @@ import {
   useColorModeValue,
   Container,
   useColorMode,
-  VStack,
 } from '@chakra-ui/react';
 
 import { linkColor } from '../theme';
 
-export const JobSkills: React.FC<IJobSkills> = props => {
+export const JobSkills = props => {
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map(tag => {
@@ -43,7 +42,6 @@ export const JobSkills: React.FC<IJobSkills> = props => {
     </HStack>
   );
 };
-
 const ExperienceList = () => {
   const { colorMode } = useColorMode();
   const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
@@ -51,7 +49,7 @@ const ExperienceList = () => {
     <Container
       id="work-experience"
       color={useColorModeValue('gray.600', 'white')}
-      maxW={{ lg: '7xl' }}
+      maxW={{ lg: '6xl' }}
     >
       <Box position={'relative'} overflow={'hidden'}>
         {/* Hide this App Icon in Mobile width */}
@@ -61,8 +59,8 @@ const ExperienceList = () => {
           </>
         )}
         <Heading
-          my={5}
-          textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
+          my={2}
+          textAlign={'center'}
           color={useColorModeValue('gray.600', 'white')}
         >
           {' '}

@@ -15,6 +15,12 @@ import {
   useColorModeValue,
   Spacer,
   Button,
+  Tabs,
+  TabList,
+  Tab,
+  Tooltip,
+  Icon,
+  VStack,
 } from '@chakra-ui/react';
 
 // Import Color themes
@@ -32,6 +38,9 @@ import { ExternalLinkIcon } from '@chakra-ui/icons';
 // Import Project Data
 import { projects } from '../../data/data';
 
+// Import use State from React
+import { useState } from 'react';
+
 const Skill = ({ text, image }) => {
   return (
     <Stack direction={'row'} align={'center'}>
@@ -47,6 +56,21 @@ export default function SplitWithImage() {
   const { colorMode } = useColorMode();
   const [isLargerThanMobile] = useMediaQuery('(max-width: 680px)');
   const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
+
+  // Filter the mapped projects based on the library property in the objects
+  const [filter, setFilter] = useState('');
+
+  const filteredProjects = projects.filter(project =>
+    project.library.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  // Use State code to change the opacity of the tab that is selected
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabClick = index => {
+    setActiveTab(index);
+  };
+
   return (
     <Container
       id="projects"
@@ -76,7 +100,7 @@ export default function SplitWithImage() {
           {/* Hide this App Icon in Mobile width */}
           {isSmallerThanMobile && (
             <>
-              <Image mx={'auto'} boxSize={20} src="./app-store.png" />
+              <Image mx={'auto'} boxSize={89} src="./icons/project.png" />
             </>
           )}
           <Heading
@@ -130,7 +154,30 @@ export default function SplitWithImage() {
             >
               My Github Repo <ExternalLinkIcon mx="2px" />
             </Link>{' '}
-            below to view the projects on my github repository.
+            below to view the projects that are shown below on my github
+            repository.
+          </Text>
+          <Text
+            mx={'auto'}
+            width={{ base: 'left', sm: 'none', lg: '50%' }}
+            color={useColorModeValue('gray.600', 'white')}
+            mb={5}
+            textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
+          >
+            You are able to{' '}
+            <Text
+              as={'span'}
+              color={linkColor[colorMode]}
+              colorScheme={'teal'}
+              fontWeight={600}
+              bg={bgColor[colorMode]}
+              fontSize={'14px'}
+            >
+              {' '}
+              Test
+            </Text>{' '}
+            filter the projects below by clicking one of the tabs.
+            <Icon as={<img src="path/to/your/image.png" />} />
           </Text>
           <Box textAlign={{ base: 'left', sm: 'none', lg: 'center' }}>
             <Link
@@ -157,10 +204,73 @@ export default function SplitWithImage() {
           </Box>
         </Box>
       </Flex>
-
+      {/* Tab componet that filters projects bsaed on the programming language */}
+      <Tabs
+        isLazy
+        colorScheme={'teal'}
+        index={activeTab}
+        textAlign={'center'}
+        align="center"
+        variant={'enclosed-colored'}
+        onChange={handleTabClick}
+        mb={10}
+      >
+        <TabList>
+          <Tooltip placement="top" label="All" aria-label="A tooltip">
+            <Tab
+              opacity={activeTab === 0 ? 1 : 0.5}
+              onClick={() => setFilter('')}
+            >
+              <VStack>
+                <Image h={5} src="/icons/menu.png"></Image>
+              </VStack>
+            </Tab>
+          </Tooltip>
+          <Tooltip placement="top" label="React" aria-label="A tooltip">
+            <Tab
+              opacity={activeTab === 1 ? 1 : 0.5}
+              onClick={() => setFilter('React')}
+            >
+              <VStack>
+                <Image h={5} src="/icons/React.png"></Image>
+              </VStack>
+            </Tab>
+          </Tooltip>
+          <Tooltip
+            placement="top"
+            label="Coming Soon..."
+            aria-label="A tooltip"
+          >
+            <Tab
+              opacity={activeTab === 2 ? 1 : 0.5}
+              isDisabled
+              onClick={() => setFilter('Vue')}
+            >
+              <VStack>
+                <Image h={5} src="/icons/Vue.png"></Image>
+              </VStack>
+            </Tab>
+          </Tooltip>
+          <Tooltip
+            placement="top"
+            label="Coming Soon..."
+            aria-label="A tooltip"
+          >
+            <Tab
+              opacity={activeTab === 2 ? 1 : 0.5}
+              isDisabled
+              onClick={() => setFilter('Angular')}
+            >
+              <VStack>
+                <Image h={5} src="/icons/Angular.png"></Image>
+              </VStack>
+            </Tab>
+          </Tooltip>
+        </TabList>
+      </Tabs>
       {/* Map Projects */}
-      {projects.map(project => (
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+      {filteredProjects.map((project, index) => (
+        <SimpleGrid key={index} columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={4}>
             <Heading color={textColor[colorMode]} fontSize={30}>
               {project.titleFname}{' '}
@@ -197,40 +307,38 @@ export default function SplitWithImage() {
               ))}
               <Box mt={4}>
                 <Link
-                color={linkColor[colorMode]}
-                colorScheme={'teal'}
-                fontWeight={600}
-                fontSize={'14px'}
-                marginRight={'10px'}
-                bg={bgColor[colorMode]}
-                p={1}
-                marginTop={3}
-                alignSelf={'flex-start'}
-                rounded={'md'}
-                // Replace this link with mapped link attribute
-                href={project.previewLink}
-                isExternal
-              >
-                Live Preview <ExternalLinkIcon mx="2px" />
-              </Link>
-              <Link
-              color={linkColor[colorMode]}
-              colorScheme={'teal'}
-              fontWeight={600}
-              fontSize={'14px'}
-              bg={bgColor[colorMode]}
-              p={1}
-              isExternal
-              marginTop={3}
-              alignSelf={'flex-start'}
-              rounded={'md'}
-              href={project.githubLink}
-            >
-              Github Repository <ExternalLinkIcon mx="2px" />
-            </Link>
+                  color={linkColor[colorMode]}
+                  colorScheme={'teal'}
+                  fontWeight={600}
+                  fontSize={'14px'}
+                  marginRight={'10px'}
+                  bg={bgColor[colorMode]}
+                  p={1}
+                  marginTop={3}
+                  alignSelf={'flex-start'}
+                  rounded={'md'}
+                  // Replace this link with mapped link attribute
+                  href={project.previewLink}
+                  isExternal
+                >
+                  Live Preview <ExternalLinkIcon mx="2px" />
+                </Link>
+                <Link
+                  color={linkColor[colorMode]}
+                  colorScheme={'teal'}
+                  fontWeight={600}
+                  fontSize={'14px'}
+                  bg={bgColor[colorMode]}
+                  p={1}
+                  isExternal
+                  marginTop={3}
+                  alignSelf={'flex-start'}
+                  rounded={'md'}
+                  href={project.githubLink}
+                >
+                  Github Repository <ExternalLinkIcon mx="2px" />
+                </Link>
               </Box>
-              
-
             </Stack>
             {isLargerThanMobile && (
               <>

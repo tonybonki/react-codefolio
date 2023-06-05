@@ -8,6 +8,7 @@ import {
   Icon,
   useColorModeValue,
   Link,
+  HStack,
 } from '@chakra-ui/react';
 
 export default function MainHero() {
@@ -42,7 +43,7 @@ export default function MainHero() {
               Code-folio!
             </Text>
           </Heading>
-
+          
           <Text
             color={useColorModeValue('gray.600', 'white')}
             width={{ base: '100%', lg: '70%' }}
@@ -63,14 +64,12 @@ export default function MainHero() {
             <Button size="sm" colorScheme="teal">
               Projects
             </Button>
-            <Link
-              textDecoration={'none !important'}
-              href="mailto:tony.bonki2@mail.dcu.ie?subject=Replace this with your Subject&body=Email%20Body"
-            >
-              <Button size="sm" colorScheme="teal">
-                Contact Me
-              </Button>
-            </Link>
+            <Button size="sm" colorScheme="teal">
+            <Link textDecoration={'none !important'} href='mailto:tony.bonki2@mail.dcu.ie?subject=Replace this with your Subject&body=Email%20Body'>
+            Contact Me
+              </Link>
+              
+            </Button>
           </Stack>
         </Stack>
         {/* The Image of Myself */}
@@ -87,7 +86,7 @@ export default function MainHero() {
 }
 
 // The Blob background
-export const Blob = (props) => {
+export const Blob = props => {
   return (
     <Icon
       width={'100%'}
