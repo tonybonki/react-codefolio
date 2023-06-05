@@ -157,28 +157,6 @@ export default function SplitWithImage() {
             below to view the projects that are shown below on my github
             repository.
           </Text>
-          <Text
-            mx={'auto'}
-            width={{ base: 'left', sm: 'none', lg: '50%' }}
-            color={useColorModeValue('gray.600', 'white')}
-            mb={5}
-            textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
-          >
-            You are able to{' '}
-            <Text
-              as={'span'}
-              color={linkColor[colorMode]}
-              colorScheme={'teal'}
-              fontWeight={600}
-              bg={bgColor[colorMode]}
-              fontSize={'14px'}
-            >
-              {' '}
-              Test
-            </Text>{' '}
-            filter the projects below by clicking one of the tabs.
-            <Icon as={<img src="path/to/your/image.png" />} />
-          </Text>
           <Box textAlign={{ base: 'left', sm: 'none', lg: 'center' }}>
             <Link
               _hover={{
