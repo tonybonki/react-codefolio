@@ -42,7 +42,6 @@ export const JobSkills = props => {
     </HStack>
   );
 };
-
 const ExperienceList = () => {
   const { colorMode } = useColorMode();
   const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
@@ -60,8 +59,8 @@ const ExperienceList = () => {
           </>
         )}
         <Heading
-          my={5}
-          textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
+          my={2}
+          textAlign={'center'}
           color={useColorModeValue('gray.600', 'white')}
         >
           {' '}

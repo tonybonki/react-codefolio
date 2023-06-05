@@ -12,7 +12,7 @@ import {
   Container,
 } from '@chakra-ui/react';
 import { GoFileCode, GoPencil, GoMortarBoard } from 'react-icons/go';
-const Skill = ({ title, text, icon }: SkillProps) => {
+const Skill = ({ title, text, icon }) => {
   return (
     <Stack>
       <HStack spacing={0}>
@@ -35,11 +35,10 @@ const Skill = ({ title, text, icon }: SkillProps) => {
 
 export default function Skillset() {
   return (
-    <Container maxW={'6xl'}>
-      <VStack p={4} paddingTop="40px" spacing="7" alignItems="flex-start">
+    <Container my={5} maxW={'6xl'}>
         <Heading
-          marginTop={5}
-          textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
+          marginTop={10}
+          textAlign={'center'}
           color={useColorModeValue('gray.600', 'white')}
         >
           {' '}
@@ -49,7 +48,6 @@ export default function Skillset() {
           Hire Me?
         </Heading>
         <Divider />
-      </VStack>
       <Box p={4}>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
           <Skill

@@ -19,6 +19,7 @@ import {
   TabList,
   Tab,
   Tooltip,
+  Icon,
   VStack,
 } from '@chakra-ui/react';
 
@@ -153,7 +154,30 @@ export default function SplitWithImage() {
             >
               My Github Repo <ExternalLinkIcon mx="2px" />
             </Link>{' '}
-            below to view the projects on my github repository.
+            below to view the projects that are shown below on my github
+            repository.
+          </Text>
+          <Text
+            mx={'auto'}
+            width={{ base: 'left', sm: 'none', lg: '50%' }}
+            color={useColorModeValue('gray.600', 'white')}
+            mb={5}
+            textAlign={{ base: 'left', sm: 'none', lg: 'center' }}
+          >
+            You are able to{' '}
+            <Text
+              as={'span'}
+              color={linkColor[colorMode]}
+              colorScheme={'teal'}
+              fontWeight={600}
+              bg={bgColor[colorMode]}
+              fontSize={'14px'}
+            >
+              {' '}
+              Test
+            </Text>{' '}
+            filter the projects below by clicking one of the tabs.
+            <Icon as={<img src="path/to/your/image.png" />} />
           </Text>
           <Box textAlign={{ base: 'left', sm: 'none', lg: 'center' }}>
             <Link
@@ -181,15 +205,6 @@ export default function SplitWithImage() {
         </Box>
       </Flex>
       {/* Tab componet that filters projects bsaed on the programming language */}
-      <Heading
-        my={7}
-        color={useColorModeValue('teal.500', 'white')}
-        textAlign={'center'}
-        fontSize={15}
-      >
-        Library / Framework
-        
-      </Heading>
       <Tabs
         isLazy
         colorScheme={'teal'}
