@@ -8,7 +8,6 @@ import {
   Icon,
   useColorModeValue,
   Link,
-  HStack,
 } from '@chakra-ui/react';
 
 export default function MainHero() {

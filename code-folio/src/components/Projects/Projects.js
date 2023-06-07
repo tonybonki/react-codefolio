@@ -18,8 +18,7 @@ import {
   Tabs,
   TabList,
   Tab,
-  Tooltip,
-  Icon,
+  Tooltip, 
   VStack,
 } from '@chakra-ui/react';
 

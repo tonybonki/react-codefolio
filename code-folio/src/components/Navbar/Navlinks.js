@@ -4,12 +4,12 @@ import CV from './CV.pdf'
 
 import {
   AiOutlineFundProjectionScreen,
-  AiOutlineCode,
+  // AiOutlineCode,
   AiOutlineWallet,
-  AiOutlineCoffee,
-  AiOutlineProject,
-  AiOutlineCloud,
-  AiOutlineHeart,
+  // AiOutlineCoffee,
+  // AiOutlineProject,
+  // AiOutlineCloud,
+  // AiOutlineHeart,
   AiOutlineLinkedin,
 } from 'react-icons/ai';
 
@@ -25,12 +25,6 @@ export const NAV_ITEMS = [
         subLabel: "Websites and apps that I've built.",
         href: '#projects',
       },
-      {
-        icon: <AiOutlineCode size={17} />,
-        label: 'Language repertoire.',
-        subLabel: "Programming languages I'm familiar with.",
-        href: '#',
-      },
     ],
   },
   {
@@ -43,12 +37,12 @@ export const NAV_ITEMS = [
         subLabel: 'Places I have worked in.',
         href: '#work-experience',
       },
-      {
-        icon: <AiOutlineHeart />,
-        label: 'Testimonials',
-        subLabel: 'Contractor Success Stories',
-        href: '#',
-      },
+      // {
+      //   icon: <AiOutlineHeart />,
+      //   label: 'Testimonials',
+      //   subLabel: 'Contractor Success Stories',
+      //   href: '#',
+      // },
       {
         icon: <AiOutlineLinkedin />,
         label: 'My Resume',
@@ -58,29 +52,29 @@ export const NAV_ITEMS = [
       },
     ],
   },
-  {
-    label: 'About Me',
-    children: [
-      {
-        icon: <AiOutlineProject />,
-        label: 'My Education',
-        subLabel: 'My educational background.',
-        href: '#',
-      },
-      {
-        icon: <AiOutlineCoffee />,
-        label: 'Hobbies',
-        subLabel: 'Things I do to have fun :)',
-        href: '#',
-      },
-      {
-        icon: <AiOutlineCloud />,
-        label: 'My Dreams and Goals',
-        subLabel: 'Who and what I aspire to be',
-        href: '#',
-      },
-    ],
-  },
+  // {
+  //   label: 'About Me',
+  //   children: [
+  //     {
+  //       icon: <AiOutlineProject />,
+  //       label: 'My Education',
+  //       subLabel: 'My educational background.',
+  //       href: '#',
+  //     },
+  //     {
+  //       icon: <AiOutlineCoffee />,
+  //       label: 'Hobbies',
+  //       subLabel: 'Things I do to have fun :)',
+  //       href: '#',
+  //     },
+  //     {
+  //       icon: <AiOutlineCloud />,
+  //       label: 'My Dreams and Goals',
+  //       subLabel: 'Who and what I aspire to be',
+  //       href: '#',
+  //     },
+  //   ],
+  // },
   {
     label: 'Contact Me',
     href: 'mailto:tony.bonki2@mail.dcu.ie?subject=Replace this with your Subject&body=Email%20Body',
