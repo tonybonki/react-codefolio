@@ -4,15 +4,17 @@ import {
   HStack,
   Text,
   Stack,
-  VStack,
+  Image,
   Heading,
   useColorModeValue,
   Icon,
+  useMediaQuery,
   Divider,
   Container,
 } from '@chakra-ui/react';
 import { GoFileCode, GoPencil, GoMortarBoard } from 'react-icons/go';
 const Skill = ({ title, text, icon }) => {
+  
   return (
     <Stack>
       <HStack spacing={0}>
@@ -34,20 +36,29 @@ const Skill = ({ title, text, icon }) => {
 };
 
 export default function Skillset() {
+  const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
   return (
     <Container my={5} maxW={'6xl'}>
+      <Box>
+        {/* Hide Icon in Mobile width */}
+        {isSmallerThanMobile && (
+          <>
+            <Image mx={'auto'} h={95} src="./my-skills.png" />
+          </>
+        )}
         <Heading
-          marginTop={10}
+          my={2}
           textAlign={'center'}
           color={useColorModeValue('gray.600', 'white')}
         >
           {' '}
           <Text color={useColorModeValue('teal.500', 'white')} as={'span'}>
-            Why
+            Why you want me
           </Text>{' '}
-          Hire Me?
+          On your team
         </Heading>
-        <Divider />
+      </Box>
+      <Divider />
       <Box p={4}>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
           <Skill

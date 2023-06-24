@@ -6,6 +6,7 @@ import SplitWithImage from './components/Projects/Projects';
 import ExperienceList from './components/WorkExperience/WorkExperience';
 import Skillset from './components/WorkExperience/Skills'; 
 import Footer from './components/Footer/Footer'
+import CertificateCards from './components/certificates';
 
 import {
   ChakraProvider,
@@ -21,6 +22,7 @@ function App() {
       <SplitWithImage />
       <ExperienceList />
       <Skillset />
+      {/* <CertificateCards /> */}
       <Footer />
     </ChakraProvider>
   );

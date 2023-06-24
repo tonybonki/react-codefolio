@@ -51,8 +51,8 @@ const ExperienceList = () => {
       color={useColorModeValue('gray.600', 'white')}
       maxW={{ lg: '6xl' }}
     >
-      <Box position={'relative'} overflow={'hidden'}>
-        {/* Hide this App Icon in Mobile width */}
+      <Box >
+        {/* Hide Icon in Mobile width */}
         {isSmallerThanMobile && (
           <>
             <Image mx={'auto'} boxSize={20} src="./work-exp.png" />
@@ -69,19 +69,6 @@ const ExperienceList = () => {
           </Text>{' '}
           Experience
         </Heading>
-        {/* Head */}
-        <Box textAlign={{ base: 'left', sm: 'none', lg: 'center' }}>
-          <Link
-            _hover={{
-              textDecoration: 'none',
-            }}
-            isExternal
-            href="https://github.com/tonybonki"
-          >
-            {' '}
-          </Link>
-          {/* Add Button or Component Here */}
-        </Box>
       </Box>
       <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
