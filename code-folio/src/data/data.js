@@ -43,3 +43,12 @@ export const jobs = [
     skills: ['Web Engineering', 'Networking', 'VM', 'Firewall'],
   },
 ];
+
+// My Certificates
+
+export const certificates = [
+  {
+    course: 'React + Redux',
+    company:'sololearn'
+  },
+]

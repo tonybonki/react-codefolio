@@ -47,7 +47,7 @@ export default function Skillset() {
           </>
         )}
         <Heading
-          my={2}
+          my={5}
           textAlign={'center'}
           color={useColorModeValue('gray.600', 'white')}
         >

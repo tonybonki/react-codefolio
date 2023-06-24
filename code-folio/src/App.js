@@ -22,7 +22,7 @@ function App() {
       <SplitWithImage />
       <ExperienceList />
       <Skillset />
-      {/* <CertificateCards /> */}
+      <CertificateCards />
       <Footer />
     </ChakraProvider>
   );
