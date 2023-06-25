@@ -7,10 +7,9 @@ import {
   Stack,
   useMediaQuery,
   Image,
+  Divider,
 } from '@chakra-ui/react';
 import { transform } from 'framer-motion';
-
-const IMAGE = './certificates/sololearn-react.jpg';
 
 export default function CertificateCards() {
   const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
@@ -20,7 +19,7 @@ export default function CertificateCards() {
         {/* Hide Icon in Mobile width */}
         {isSmallerThanMobile && (
           <>
-            <Image mx={'auto'} boxSize={20} src="./work-exp.png" />
+            <Image mx={'auto'} boxSize={20} src="./certificate.png" />
           </>
         )}
         <Heading
@@ -35,10 +34,12 @@ export default function CertificateCards() {
           Certificates
         </Heading>
       </Box>
+      <Divider mx={'auto'} w={660} marginTop="5" />
+
       <Center py={5}>
         <Image
-                  w={{ lg: '450px', sm: '350px', base:'350px' }}
-                  m={4}
+          w={{ lg: '450px', sm: '350px', base: '350px' }}
+          m={4}
           rounded={'md'}
           shadow={'lg'}
           objectFit={'cover'}
