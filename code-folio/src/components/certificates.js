@@ -36,13 +36,18 @@ export default function CertificateCards() {
       </Box>
       <Divider mx={'auto'} my="5" />
 
-      <Grid w={{sm:1400}} mx={'auto'} templateColumns={['fr', '1fr', '1fr 1fr 1fr']}  gap={10}>
+      <Grid
+        w={{ sm: 1400 }}
+        mx={'auto'}
+        templateColumns={['fr', '1fr', '1fr 1fr 1fr']}
+        gap={10}
+      >
         {certificates.map(certificate => (
           <Box>
             <Image
               rounded={'md'}
               shadow={'base'}
-              w={{base:450}}
+              w={{ base: 350, sm: 500 }}
               mb={6}
               mx={'auto'}
               src={`./certificates/${certificate.name}`}
