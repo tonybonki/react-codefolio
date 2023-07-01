@@ -48,7 +48,12 @@ export const jobs = [
 
 export const certificates = [
   {
-    course: 'React + Redux',
-    company:'sololearn'
+    name:'sololearn-react.jpg'
+  },
+  {
+    name:'sololearn-html.jpg'
+  },
+  {
+    name:'sololearn-css.jpg'
   },
 ]

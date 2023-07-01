@@ -1,15 +1,15 @@
 import {
   Box,
-  Center,
   useColorModeValue,
   Heading,
   Text,
-  Stack,
   useMediaQuery,
   Image,
+  Grid,
   Divider,
 } from '@chakra-ui/react';
-import { transform } from 'framer-motion';
+
+import { certificates } from '../data/data';
 
 export default function CertificateCards() {
   const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
@@ -34,18 +34,22 @@ export default function CertificateCards() {
           Certificates
         </Heading>
       </Box>
-      <Divider mx={'auto'} w={660} marginTop="5" />
+      <Divider mx={'auto'} my="5" />
 
-      <Center py={5}>
-        <Image
-          w={{ lg: '450px', sm: '350px', base: '350px' }}
-          m={4}
-          rounded={'md'}
-          shadow={'lg'}
-          objectFit={'cover'}
-          src={'./certificates/sololearn-react.jpg'}
-        />
-      </Center>
+      <Grid w={{sm:1400}} mx={'auto'} templateColumns={['fr', '1fr', '1fr 1fr 1fr']}  gap={10}>
+        {certificates.map(certificate => (
+          <Box>
+            <Image
+              rounded={'md'}
+              shadow={'base'}
+              w={{base:450}}
+              mb={6}
+              mx={'auto'}
+              src={`./certificates/${certificate.name}`}
+            />
+          </Box>
+        ))}
+      </Grid>
     </>
   );
 }
