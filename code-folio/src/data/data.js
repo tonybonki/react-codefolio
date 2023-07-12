@@ -48,12 +48,15 @@ export const jobs = [
 
 export const certificates = [
   {
-    name:'sololearn-react.jpg'
+    name: 'sololearn-react.jpg',
   },
   {
-    name:'sololearn-html.jpg'
+    name: 'sololearn-html.jpg',
   },
   {
-    name:'sololearn-css.jpg'
+    name: 'sololearn-css.jpg',
   },
-]
+  {
+    name: 'sololearn-javascript.png',
+  },
+];
