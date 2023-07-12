@@ -22,7 +22,7 @@ export const projects = [
     library: 'React',
     description:
       'I am proud to present my website portfolio, which was developed using React, Tailwind CSS, and Netlify. This project is a significant milestone for me, as it marks my first attempt at using React. I followed a tutorial from FreeCodeCamp to create this portfolio, which helped me acquire new skills and knowledge that I hope to utilize in my future projects. Thank you for taking the time to explore my portfolio.',
-    githubLink: 'https://github.com/tonybonki/Busy-Blogs',
+    githubLink: 'https://github.com/tonybonki/Main-Portfolio',
     stack: ['React', 'Javascript', 'TailwindCSS', 'HTML'],
     colorTheme: '#625698',
     previewLink: 'https://tony-bonki-portfolio.netlify.app/',
