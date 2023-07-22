@@ -177,11 +177,10 @@ export default function SplitWithImage() {
                 My Github Repo
               </Button>
             </Link>
-            {/* Add Button or Component Here */}
           </Box>
         </Box>
       </Flex>
-      {/* Tab componet that filters projects bsaed on the programming language */}
+      {/* Tab component that filters projects bsaed on the programming language */}
       <Tabs
         isLazy
         colorScheme={'teal'}
@@ -219,7 +218,7 @@ export default function SplitWithImage() {
             aria-label="A tooltip"
           >
             <Tab
-              opacity={activeTab === 2 ? 1 : 0.5}
+              opacity={activeTab === 3 ? 1 : 0.5}
               isDisabled
               onClick={() => setFilter('Vue')}
             >
@@ -230,11 +229,13 @@ export default function SplitWithImage() {
           </Tooltip>
           <Tooltip
             placement="top"
+            // Change label below to what is appropriate
             label="Coming Soon..."
             aria-label="A tooltip"
           >
             <Tab
-              opacity={activeTab === 2 ? 1 : 0.5}
+              opacity={activeTab === 3 ? 1 : 0.5}
+              // Delete the comment out property below to deactivate the tab
               isDisabled
               onClick={() => setFilter('Angular')}
             >
