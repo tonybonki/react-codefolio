@@ -7,7 +7,7 @@ export const projects = [
     macbookImageName: 'busy-blogs.png',
     mobileImageName: 'busy-blogs-mobile.png',
     description:
-      'I am thrilled to present my latest project, a stunning blog website equipped with a robust backend functionality, designed using MongoDB Node.js, Bootstrap 5.2 and EJS. This project is just one of the many websites that I am currently working on, which will allow me to enhance my skills and demonstrate my expertise in full-stack website development. I have named this particular project "Busy Blogs" because users have the freedom to create and share their own blog posts directly on the website. Thank you for taking the time to learn about my exciting new project.',
+      'I am thrilled to present my latest project, a stunning blog website equipped with a robust backend functionality, designed using MongoDB Node.js, Bootstrap 5.2 and EJS. This project is just one of the many websites that I have completed, which will allowed me to enhance my skills and demonstrate my expertise in full-stack website development. I have named this particular project "Busy Blogs" because users have the freedom to create and share their own blog posts directly on the website. Thank you for taking the time to learn about my exciting new project.',
     githubLink: 'https://github.com/tonybonki/Busy-Blogs',
     library: '',
     stack: ['Ejs', 'NodeJS', 'Bootstrap', 'MongoDB', 'CSS'],
