@@ -33,7 +33,7 @@ export default function Footer() {
         <Divider />
         <HStack spacing={2}>
           <Image h={5} src={'./favicon.ico'}></Image>
-          <Text pt={1}> 2023 Codefolio by Bonki</Text>
+          <Text fontSize={'15px'} pt={1}> 2023 Tony Bonki</Text>
         </HStack>
       </Container>
     </Box>
