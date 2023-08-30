@@ -46,6 +46,16 @@ export const projects = [
 
 export const jobs = [
   {
+    title: 'Website Dev Assistant Tutor',
+    company: 'Dublin City University',
+    timeWorked: '4 Months',
+    website: 'https://www.dcu.ie/',
+    description:
+      'As a committed Lab Assistant, I facilitate hands-on learning experiences for students in web development. Guiding them through the intricacies of HTML, CSS, JavaScript, and more, I provide invaluable insights into the world of coding, design, and user experience.',
+    jobImageName: 'dublincityuniversity.jpg',
+    skills: ['Web Dev', 'Html/Css', 'Javascript', 'Debugging'],
+  },
+  {
     title: 'ICT Clerical Officer',
     company: 'The State Laboratory',
     timeWorked: '1 Year',
