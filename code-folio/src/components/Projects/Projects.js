@@ -56,11 +56,11 @@ export default function SplitWithImage() {
   const [isLargerThanMobile] = useMediaQuery('(max-width: 680px)');
   const [isSmallerThanMobile] = useMediaQuery('(min-width: 680px)');
 
-  // Filter the mapped projects based on the library property in the objects
+  // Filter the mapped projects based on the framework property in the objects
   const [filter, setFilter] = useState('');
 
   const filteredProjects = projects.filter(project =>
-    project.library.toLowerCase().includes(filter.toLowerCase())
+    project.framework.toLowerCase().includes(filter.toLowerCase())
   );
 
   // Use State code to change the opacity of the tab that is selected
