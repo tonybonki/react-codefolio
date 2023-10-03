@@ -26,7 +26,7 @@ export default function MainHero() {
             </Text>
             <br />
             <Text as={'span'} color={useColorModeValue('teal.500', 'teal.300')}>
-              Code-folio!
+              Test
             </Text>
           </Heading>
           <Heading
@@ -42,7 +42,7 @@ export default function MainHero() {
               Code-folio!
             </Text>
           </Heading>
-          
+
           <Text
             color={useColorModeValue('gray.600', 'white')}
             width={{ base: '100%', lg: '70%' }}
@@ -64,10 +64,12 @@ export default function MainHero() {
               Projects
             </Button>
             <Button size="sm" colorScheme="teal">
-            <Link textDecoration={'none !important'} href='mailto:tony.bonki2@mail.dcu.ie?subject=Replace this with your Subject&body=Email%20Body'>
-            Contact Me
+              <Link
+                textDecoration={'none !important'}
+                href="mailto:tony.bonki2@mail.dcu.ie?subject=Replace this with your Subject&body=Email%20Body"
+              >
+                Contact Me
               </Link>
-              
             </Button>
           </Stack>
         </Stack>
